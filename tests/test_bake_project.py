@@ -229,7 +229,7 @@ def test_bake_with_console_script_files(cookies):
 
 
 def test_bake_with_argparse_console_script_files(cookies):
-    context = {'command_line_interface': 'argparse'}
+    context = {'command_line_interface': 'Argparse'}
     result = cookies.bake(extra_context=context)
     project_path, project_slug, package_name, package_dir = project_info(result)
     found_project_files = os.listdir(package_dir)
