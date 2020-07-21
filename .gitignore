@@ -94,7 +94,7 @@ target/
 
 # Cookiecutter
 output/
-python_boilerplate/
+python-boilerplate/
 cookiecutter-pypackage-env/
 
 # IDE settings
