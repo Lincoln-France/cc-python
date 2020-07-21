@@ -4,12 +4,11 @@
 
 ### Description
 
-Describe what you were trying to get done.
-Tell us what happened, what went wrong, and what you expected to happen.
+Description de la problématique: dites nous ce qui n'a pas fonctionné et ce qui était attendu.
 
-### What I Did
+
+### Ce que j'ai fait
 
 ```
-Paste the command(s) you ran and the output.
-If there was a crash, please include the traceback here.
+Commandes effectuées. Coller la log ici si nécessaire.
 ```
