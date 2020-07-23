@@ -1,11 +1,11 @@
-# Credits
+# Auteurs
+
+## Equipe
 
 {{ cookiecutter.organisation }}
 
-# Equipe
-
 * Lead dev: {{ cookiecutter.lead_dev }} - {{ cookiecutter.email }}
 
-# Contributeurs
+## Contributeurs
 
 _pas encore_

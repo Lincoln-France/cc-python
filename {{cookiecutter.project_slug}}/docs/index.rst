@@ -1,17 +1,17 @@
 Welcome to {{ cookiecutter.project_name }}'s documentation!
-======================================
+===========================================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   readme
+   README
    installation
    usage
    modules
-   contributing
-   authors
-   history
+   CONTRIBUTING
+   AUTHORS
+   HISTORY
 
 Indices and tables
 ==================

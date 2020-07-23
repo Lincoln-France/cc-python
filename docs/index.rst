@@ -12,7 +12,7 @@ Getting Started
 .. toctree::
    :maxdepth: 2
 
-   readme
+   README
    tutorial
    pypi_release_checklist
 
