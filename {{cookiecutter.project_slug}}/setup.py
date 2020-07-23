@@ -10,7 +10,10 @@ with open('README.md') as readme_file:
 with open('HISTORY.md') as history_file:
     history = history_file.read()
 
-requirements = [{%- if cookiecutter.command_line_interface|lower == 'click' %}'Click>=7.0',{%- endif %} ]
+with open('requirements/prod.txt') as prod_requirements_file:
+    prod_requirements = prod_requirements_file.read().splitlines()
+    if prod_requirements[0].startswith('-r'):
+        prod_requirements = prod_requirements[1:]
 
 setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %} ]
 
@@ -49,7 +52,7 @@ setup(
         ],
     },
     {%- endif %}
-    install_requires=requirements,
+    install_requires=prod_requirements,
 {%- if cookiecutter.open_source_license in license_classifiers %}
     license="{{ cookiecutter.open_source_license }}",
 {%- endif %}
