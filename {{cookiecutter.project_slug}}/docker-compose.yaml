@@ -1,0 +1,24 @@
+{%- for answer, infos in cookiecutter.docker|dictsort %}
+{%- if answer == 'y' %}
+version: "3"
+services:
+  core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        PUID: {{ infos.uid }}
+        PGID: {{ infos.gid }}
+        WORKDIR: /package
+        VERSION: {{ cookiecutter.version }}
+    image: {{ cookiecutter.package_name }}-core:{{ cookiecutter.version }}
+    container_name: {{ cookiecutter.package_name }}-core
+    user: lincoln
+    volumes:
+      - "${PWD}:/package"
+    env_file:
+      - .env
+    networks:
+      - default
+{%- endif %}
+{%- endfor %}

@@ -10,5 +10,12 @@
   "version": "0.1.0",
   "use_pytest": "n",
   "command_line_interface": ["Click", "Argparse", "No command-line interface"],
+  "docker": {
+    "y": {
+      "docker_compose": "y",
+      "uid": 1001,
+      "gid": 1001
+    }
+  },
   "open_source_license": ["Not open source", "MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3"]
 }
