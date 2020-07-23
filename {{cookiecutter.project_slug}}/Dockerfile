@@ -1,12 +1,11 @@
-{%- for answer, infos in cookiecutter.docker|dictsort %}
-{%- if answer == 'y' %}
-{%- if infos.docker_compose == 'y' %}
+{%- if cookiecutter.docker == 'y' %}
+{%- if cookiecutter.docker_compose == 'y' %}
 ARG BASE_CONTAINER=python:3.7-buster
 FROM $BASE_CONTAINER
 
-ENV USERNAME=lincoln
-ARG PUID={{ infos.uid }}
-ARG PGID={{ infos.gid }}
+ARG PUID
+ARG PGID
+ARG USERNAME=lincoln
 ARG WORKDIR=/package
 ARG VERSION={{ cookiecutter.version }}
 ARG TARGETOS
@@ -28,6 +27,5 @@ COPY requirements.txt .
 COPY requirements/* requirements/
 
 RUN pip install -r requirements.txt
-{%- endif %}
-{%- endif %}
-{%- endfor %}
+{% endif %}
+{% endif %}

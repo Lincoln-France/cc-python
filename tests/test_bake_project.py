@@ -3,7 +3,6 @@ import shlex
 import os
 import sys
 import subprocess
-import yaml
 import datetime
 from cookiecutter.utils import rmtree
 
@@ -149,8 +148,8 @@ def test_make_help(cookies):
 def test_bake_selecting_license(cookies):
     license_strings = {
         'MIT license': 'MIT ',
-        'BSD license': 'Redistributions of source code must retain the ' +
-                       'above copyright notice, this',
+        'BSD license': 'Redistributions of source code must retain the '
+                       + 'above copyright notice, this',
         'ISC license': 'ISC License',
         'Apache Software License 2.0':
             'Licensed under the Apache License, Version 2.0',

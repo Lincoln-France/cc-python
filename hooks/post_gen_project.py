@@ -1,11 +1,28 @@
 #!/usr/bin/env python
 import os
+import sys
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
 
 def remove_file(filepath):
     os.remove(os.path.join(PROJECT_DIRECTORY, filepath))
+
+
+def fill_uid_gid_in_file(filepath: str, pattern='!!'):
+
+    try:
+        with open(filepath, 'r') as _file:
+            data = _file.read()
+
+        data = data.replace(pattern + 'PUID' + pattern, str(os.getuid()))
+        data = data.replace(pattern + 'PGID' + pattern, str(os.getgid()))
+
+        with open(filepath, 'w') as _file:
+            _file.write(data)
+    except Exception as err:
+        print(str(err))
+        sys.exit(1)
 
 
 if __name__ == '__main__':
@@ -16,3 +33,13 @@ if __name__ == '__main__':
 
     if 'Not open source' == '{{ cookiecutter.open_source_license }}':
         remove_file('LICENSE')
+
+    if not '{{ cookiecutter.docker }}' == 'y':
+        remove_file('Dockerfile')
+        remove_file('docker-compose.yaml')
+    else:
+        fill_uid_gid_in_file(filepath='Dockerfile')
+        fill_uid_gid_in_file(filepath='docker-compose.yaml')
+
+    if not '{{ cookiecutter.docker_compose }}' == 'y':
+        remove_file('docker-compose.yaml')

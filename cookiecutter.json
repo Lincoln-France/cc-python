@@ -10,29 +10,7 @@
   "version": "0.1.0",
   "use_pytest": "n",
   "command_line_interface": ["Click", "Argparse", "No command-line interface"],
-  "docker": {
-    "y": {
-      "docker_compose": "y",
-      "uid": 1001,
-      "gid": 1001
-    }
-  },
-  "file_types": {
-    "png": {
-      "name": "Portable Network Graphic",
-      "library": "libpng",
-      "apps": [
-        "GIMP"
-      ]
-    },
-    "bmp": {
-      "name": "Bitmap",
-      "library": "libbmp",
-      "apps": [
-        "Paint",
-        "GIMP"
-      ]
-    }
-  },
+  "docker": "y",
+  "docker_compose": "{{ cookiecutter.docker }}",
   "open_source_license": ["Not open source", "MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3"]
 }

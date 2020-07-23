@@ -1,5 +1,4 @@
-{%- for answer, infos in cookiecutter.docker|dictsort %}
-{%- if answer == 'y' %}
+{%- if cookiecutter.docker == 'y' %}
 version: "3"
 services:
   core:
@@ -7,8 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        PUID: {{ infos.uid }}
-        PGID: {{ infos.gid }}
+        PUID: !!PUID!!
+        PGID: !!PGID!!
         WORKDIR: /package
         VERSION: {{ cookiecutter.version }}
     image: {{ cookiecutter.package_name }}-core:{{ cookiecutter.version }}
@@ -20,5 +19,4 @@ services:
       - .env
     networks:
       - default
-{%- endif %}
-{%- endfor %}
+{% endif %}
