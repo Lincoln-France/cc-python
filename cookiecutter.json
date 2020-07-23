@@ -17,5 +17,22 @@
       "gid": 1001
     }
   },
+  "file_types": {
+    "png": {
+      "name": "Portable Network Graphic",
+      "library": "libpng",
+      "apps": [
+        "GIMP"
+      ]
+    },
+    "bmp": {
+      "name": "Bitmap",
+      "library": "libbmp",
+      "apps": [
+        "Paint",
+        "GIMP"
+      ]
+    }
+  },
   "open_source_license": ["Not open source", "MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3"]
 }
