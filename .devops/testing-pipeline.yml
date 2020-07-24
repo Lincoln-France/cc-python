@@ -4,14 +4,14 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
-- master
+  branches:
+    include:
+      - '*'
 
 pool:
   vmImage: 'ubuntu-latest'
 strategy:
   matrix:
-    Python27:
-      python.version: '2.7'
     Python35:
       python.version: '3.5'
     Python36:
@@ -21,16 +21,14 @@ strategy:
 
 steps:
 - task: UsePythonVersion@0
+  displayName: Use version '$(python.version)'
   inputs:
     versionSpec: '$(python.version)'
-  displayName: 'Use Python $(python.version)'
 
 - script: |
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-  displayName: 'Install dependencies'
+    pip install -U pip
+    pip install tox
+  displayName: 'Install Tox'
 
-- script: |
-    pip install pytest pytest-azurepipelines
-    pytest
-  displayName: 'pytest'
+- script: tox -e py
+  displayName: 'Run Tox'
