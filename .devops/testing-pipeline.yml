@@ -12,9 +12,6 @@ pool:
   vmImage: 'ubuntu-latest'
 strategy:
   matrix:
-    Python35:
-      python.version: '3.5'
-      TOXENV: 'py35'
     Python36:
       python.version: '3.6'
       TOXENV: 'py36'
@@ -35,3 +32,10 @@ steps:
 
 - script: tox
   displayName: 'Run Tox'
+
+- task: PublishTestResults@2
+  displayName: Publish tests results
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFiles: '**/test-*.xml'
+    testRunTitle: 'Publish test results for Python $(python.version)'
