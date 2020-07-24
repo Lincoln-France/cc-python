@@ -1,0 +1,47 @@
+trigger:
+  branches:
+    include:
+      - 'master'
+      - 'releases/*'
+  paths:
+    include:
+      - 'docs/*'
+      - 'README.md'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UsePythonVersion@0
+  displayName: Use version '$(python.version)'
+  inputs:
+    versionSpec: '3.6'
+
+- script: |
+    pip install --upgrade sphinx recommonmark
+  displayName: Install dependencies
+
+- task: CopyFiles@2
+  displayName: Copying README.md to docs/
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/README.md'
+    TargetFolder: '$(Build.SourcesDirectory)/docs/'
+
+- task: CmdLine@2
+  displayName: 'Compile html documentation'
+  inputs:
+    script: 'make html'
+    workingDirectory: '$(Build.SourcesDirectory)/docs/'
+
+- task: CopyFiles@2
+  displayName: Copy documentation into artifact directory
+  inputs:
+    sourceFolder: '$(Build.SourcesDirectory)/docs/_build_/html'
+    contents: '**'
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish documentation as artifact
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: docs

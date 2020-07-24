@@ -1,4 +1,5 @@
-# Squelette projet python
+Squelette projet python
+=======================
 
 ## Cookiecutter
 
@@ -11,7 +12,7 @@ Cookiecutter 1.4.0 or higher):
 pip install -U cookiecutter
 ```
 
-Generate a Python package project:
+Generate a Python package project::
 
 ```bash
 cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git

@@ -1,9 +1,11 @@
+.PHONY: docs
 BAKE_OPTIONS=--no-input
 
 help:
 	@echo "bake 	generate project using defaults"
 	@echo "watch 	generate project using defaults and watch for changes"
 	@echo "replay 	replay last cookiecutter run and watch for changes"
+	@echo "docs     generate documentation in docs/"
 
 bake:
 	cookiecutter $(BAKE_OPTIONS) . --overwrite-if-exists
@@ -14,3 +16,8 @@ watch: bake
 replay: BAKE_OPTIONS=--replay
 replay: watch
 	;
+
+docs:
+	cp README.md docs/
+	$(MAKE) -C docs clean
+	$(MAKE) -C docs html
