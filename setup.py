@@ -7,6 +7,7 @@ setup(
     version='0.1.0',
     description='Cookiecutter template for a Python package',
     author='François Vieille',
+    license='BSD',
     author_email='francois.vieille@mel.lincoln.fr',
     url='http://factory.lincoln.cloud/git/Innovation/base-python-project',
     keywords=['cookiecutter', 'template', 'package', 'Lincoln', 'Lincoln Lab Innovation'],
