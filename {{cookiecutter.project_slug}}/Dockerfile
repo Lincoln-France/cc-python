@@ -19,13 +19,16 @@ RUN echo "TARGETVARIANT: $TARGETVARIANT"
 
 RUN pip install --upgrade pip
 
+ENV SHELL="/bin/bash"
+ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
+
 RUN groupadd --gid $PGID $USERNAME \
-    && useradd --uid $PUID --gid $PGID -d $WORKDIR $USERNAME \
+    && useradd --uid $PUID --gid $PGID -m $USERNAME \
     && chown -R $PUID:$PGID $WORKDIR
 
 COPY requirements.txt .
 COPY requirements/* requirements/
 
 RUN pip install -r requirements.txt
-{% endif %}
-{% endif %}
+{%- endif %}
+{%- endif %}
