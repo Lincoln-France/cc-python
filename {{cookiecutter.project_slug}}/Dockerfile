@@ -17,6 +17,8 @@ RUN echo "TARGETOS:      $TARGETOS"
 RUN echo "TARGETARCH:    $TARGETARCH"
 RUN echo "TARGETVARIANT: $TARGETVARIANT"
 
+WORKDIR $WORKDIR
+
 RUN pip install --upgrade pip
 
 ENV SHELL="/bin/bash"
