@@ -301,3 +301,13 @@ def test_bake_without_docker_compose(cookies):
         found_toplevel_files = [f.basename for f in result.project.listdir()]
         assert 'Dockerfile' in found_toplevel_files
         assert 'docker-compose.yaml' not in found_toplevel_files
+
+
+def test_make_install(cookies):
+    with bake_in_temp_dir(cookies, extra_context={'command_line_interface': 'Argparse'}) as result:
+        # The supplied Makefile does not support win32
+        if sys.platform != "win32":
+            check_output_inside_dir(
+                'make install',
+                str(result.project)
+            )

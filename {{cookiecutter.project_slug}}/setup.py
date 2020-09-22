@@ -12,7 +12,7 @@ with open('HISTORY.md') as history_file:
 
 with open('requirements/prod.txt') as prod_requirements_file:
     prod_requirements = prod_requirements_file.read().splitlines()
-    if prod_requirements[0].startswith('-r'):
+    if prod_requirements and prod_requirements[0].startswith('-r'):
         prod_requirements = prod_requirements[1:]
 
 setup_requirements = [{%- if cookiecutter.use_pytest == 'y' %}'pytest-runner',{%- endif %} ]
