@@ -34,12 +34,11 @@ if __name__ == '__main__':
     if 'Not open source' == '{{ cookiecutter.open_source_license }}':
         remove_file('LICENSE')
 
-    if not '{{ cookiecutter.docker }}' == 'y':
+    if '{{ cookiecutter.docker }}' == 'n':
         remove_file('Dockerfile')
         remove_file('docker-compose.yaml')
     else:
         fill_uid_gid_in_file(filepath='Dockerfile')
         fill_uid_gid_in_file(filepath='docker-compose.yaml')
-
-    if not '{{ cookiecutter.docker_compose }}' == 'y':
-        remove_file('docker-compose.yaml')
+        if '{{ cookiecutter.docker_compose }}' == 'n':
+            remove_file('docker-compose.yaml')

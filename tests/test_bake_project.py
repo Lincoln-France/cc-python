@@ -279,3 +279,25 @@ def test_bake_with_argparse_console_script_cli(cookies):
     help_result = runner.invoke(cli.main, ['--help'])
     assert help_result.exit_code == 0
     assert 'Show this message' in help_result.output
+
+
+def test_bake_without_docker(cookies):
+    context = {'docker': 'n', 'docker_compose': 'n'}
+    with bake_in_temp_dir(
+        cookies,
+        extra_context=context
+    ) as result:
+        found_toplevel_files = [f.basename for f in result.project.listdir()]
+        assert 'Dockerfile' not in found_toplevel_files
+        assert 'docker-compose.yaml' not in found_toplevel_files
+
+
+def test_bake_without_docker_compose(cookies):
+    context = {'docker': 'y', 'docker_compose': 'n'}
+    with bake_in_temp_dir(
+        cookies,
+        extra_context=context
+    ) as result:
+        found_toplevel_files = [f.basename for f in result.project.listdir()]
+        assert 'Dockerfile' in found_toplevel_files
+        assert 'docker-compose.yaml' not in found_toplevel_files
