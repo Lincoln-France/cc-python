@@ -103,3 +103,7 @@ ENV/
 
 # IDE settings
 .vscode/
+
+# devcontainer settings
+.devcontainer
+docker-compose-dev.yaml

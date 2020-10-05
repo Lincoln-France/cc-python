@@ -9,6 +9,10 @@ def remove_file(filepath):
     os.remove(os.path.join(PROJECT_DIRECTORY, filepath))
 
 
+def remove_folder(folderpath):
+    os.rmdir(os.path.join(PROJECT_DIRECTORY, folderpath))
+
+
 def fill_uid_gid_in_file(filepath: str, pattern='!!'):
 
     try:
@@ -42,3 +46,14 @@ if __name__ == '__main__':
         fill_uid_gid_in_file(filepath='docker-compose.yaml')
         if '{{ cookiecutter.docker_compose }}' == 'n':
             remove_file('docker-compose.yaml')
+
+
+    if '{{ cookiecutter.devcontainer }}' == 'n':
+        remove_folder('.devcontainer')
+        remove_file('docker-compose-dev.yaml')
+
+
+    if '{{ cookiecutter.vscode_starter_settings }}' == 'n':
+        remove_folder('.vscode')
+
+
