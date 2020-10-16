@@ -19,7 +19,7 @@
 
 ```bash
 .
-├── {{ cookiecutter.project_name }}       # module principal
+├── {{ cookiecutter.project_slug }}       # module principal
 ├── requirements/       # dossier contenant les requirements python
 ├── tests/              # dossier contenant les tests du package
 ├── logs/               # dossier contenant les logs : dev specific
