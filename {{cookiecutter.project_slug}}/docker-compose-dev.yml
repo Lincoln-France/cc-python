@@ -37,7 +37,7 @@ services:
       # Update this to wherever you want VS Code to mount the folder of your project
       - ${PWD}:/package
 {%- if cookiecutter.ssh_server_container == 'y' %}
-      - ~/.ssh:home/lincoln/.ssh
+      - ~/.ssh:/home/lincoln/.ssh
 {%- endif %}
       # - .:/package:cached
 
