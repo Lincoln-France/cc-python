@@ -29,6 +29,8 @@ RUN if [ "$PUID" != "1000" ] || [ "$PGID" != "1000" ]; then \
         && chown -R $PUID:$PGID $WORKDIR; \
     fi
 
+RUN chsh -s /bin/bash $USERNAME
+
 COPY requirements.txt .
 COPY requirements/* requirements/
 
