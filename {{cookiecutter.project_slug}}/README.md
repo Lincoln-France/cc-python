@@ -26,6 +26,7 @@
 ├── scripts/            # dossier contenant les scripts utilisant le package
 ├── docs/               # documentations générées par sphinx
 ├── .github/            # template PR, Issues sur github, gitea, ...
+├── .devcontainer/      # dossier contenant les configurations docker
 ```
 
 ## Les fichiers importants
@@ -34,6 +35,9 @@
 .
 ├── {{ cookiecutter.project_name }}
 │   ├── __init__.py                 # topc level package
+├── .devcontainer/                  # (optionnel)
+│   ├── devcontainer.json           # configuration du remote docker pour vscode
+│   ├── Dockerfile-dev              # Dockerfile de dev
 ├── README.md                       # this file
 ├── HISTORY.md                      # historique des version et les modifications
 ├── CONTRIBUTING.md                 # comment contribuer au projet
@@ -45,6 +49,7 @@
 ├── setup.py                        # setup.py pour créer un package python
 ├── tox.ini                         # aide pour les tests
 ├── docker-compose.yaml             # docker-compose du projet (optionnel)
+├── docker-compose-dev.yaml         # docker-compose de dev du projet (optionnel)
 ├── Dockerfile                      # construction de l'image (optionnel)
 ├── .env                            # variable d'environnement (optionnel)
 ```

@@ -37,7 +37,9 @@ Lorsque vous générer un nouveau projet, plusieurs questions sont posées:
 11. Framework CLI (défaut: Click)
 12. Usage de docker (défaut: y)
 13. Usage de docker-compose (défaut: y)
-14. License (défaut: Not Open Source)
+14. Usage d'une conteneur de dev (défaut: y)
+15. SSH server dans le conteneur de dev (défaut: n)
+16. License (défaut: Not Open Source)
 
 
 ## Un projet, mais aussi un package !
@@ -61,25 +63,29 @@ Le - d'un package python (soyons lucide):
 
 ## Architecture
 
-### Les répertoires
+## Les répertoires
 
 ```bash
 .
-├── {{ cookiecutter.project_name }}       # module principal
+├── {{ cookiecutter.project_slug }}       # module principal
 ├── requirements/       # dossier contenant les requirements python
 ├── tests/              # dossier contenant les tests du package
 ├── logs/               # dossier contenant les logs : dev specific
 ├── scripts/            # dossier contenant les scripts utilisant le package
 ├── docs/               # documentations générées par sphinx
 ├── .github/            # template PR, Issues sur github, gitea, ...
+├── .devcontainer/      # dossier contenant les configurations docker
 ```
 
-### Les fichiers importants
+## Les fichiers importants
 
 ```bash
 .
 ├── {{ cookiecutter.project_name }}
 │   ├── __init__.py                 # topc level package
+├── .devcontainer/                  # (optionnel)
+│   ├── devcontainer.json           # configuration du remote docker pour vscode
+│   ├── Dockerfile-dev              # Dockerfile de dev
 ├── README.md                       # this file
 ├── HISTORY.md                      # historique des version et les modifications
 ├── CONTRIBUTING.md                 # comment contribuer au projet
@@ -91,6 +97,7 @@ Le - d'un package python (soyons lucide):
 ├── setup.py                        # setup.py pour créer un package python
 ├── tox.ini                         # aide pour les tests
 ├── docker-compose.yaml             # docker-compose du projet (optionnel)
+├── docker-compose-dev.yaml         # docker-compose de dev du projet (optionnel)
 ├── Dockerfile                      # construction de l'image (optionnel)
 ├── .env                            # variable d'environnement (optionnel)
 ```
