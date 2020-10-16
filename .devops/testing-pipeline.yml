@@ -18,6 +18,9 @@ strategy:
     Python37:
       python.version: '3.7'
       TOXENV: 'py37, docs, flake8'
+    Python38:
+      python.version: '3.8'
+      TOXENV: 'py38, docs, flake8'
 
 steps:
 - task: UsePythonVersion@0

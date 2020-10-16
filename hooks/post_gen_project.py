@@ -47,13 +47,9 @@ if __name__ == '__main__':
         if '{{ cookiecutter.docker_compose }}' == 'n':
             remove_file('docker-compose.yaml')
 
-
     if '{{ cookiecutter.devcontainer }}' == 'n':
         remove_folder('.devcontainer')
         remove_file('docker-compose-dev.yaml')
 
-
     if '{{ cookiecutter.vscode_starter_settings }}' == 'n':
         remove_folder('.vscode')
-
-
