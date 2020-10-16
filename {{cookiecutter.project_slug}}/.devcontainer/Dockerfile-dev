@@ -35,4 +35,10 @@ COPY requirements.txt .
 COPY requirements/* requirements/
 
 RUN pip install -r requirements/dev.txt
+
+{%- if cookiecutter.ssh_server_container == 'y' %}
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && \ 
+    apt-get install --no-install-recommends --yes openssh-server && \
+    rm -rf /var/lib/apt/lists/*
+{%- endif %}
 {%- endif %}

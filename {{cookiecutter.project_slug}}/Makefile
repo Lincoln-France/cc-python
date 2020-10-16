@@ -91,3 +91,9 @@ dist: clean ## builds source and wheel package
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
+
+{%- if cookiecutter.ssh_server_container == 'y' %}
+start-ssh:
+	docker-compose -f docker-compose-dev.yaml up -d
+	docker exec -u root -it service ssh start
+{%- endif %}
