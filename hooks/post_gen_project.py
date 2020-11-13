@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import os
+import shutil
 import sys
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
@@ -10,7 +11,7 @@ def remove_file(filepath):
 
 
 def remove_folder(folderpath):
-    os.rmdir(os.path.join(PROJECT_DIRECTORY, folderpath))
+    shutil.rmtree(os.path.join(PROJECT_DIRECTORY, folderpath), ignore_errors=True)
 
 
 def fill_uid_gid_in_file(filepath: str, pattern='!!'):
