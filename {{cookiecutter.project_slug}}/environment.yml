@@ -2,4 +2,4 @@ name: {{ cookiecutter.project_name.lower().replace(' ', '-') }}
 dependencies:
   - pip:
     - -r requirements/dev.txt
-    - . -e
+    - -e .
