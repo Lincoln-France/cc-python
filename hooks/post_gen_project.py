@@ -54,3 +54,7 @@ if __name__ == '__main__':
 
     if '{{ cookiecutter.vscode_starter_settings }}' == 'n':
         remove_folder('.vscode')
+
+    # Setting up conda environment
+    print('Setting-up conda environment...')
+    os.system("conda env create -f %s/environment.yml > /dev/null" % PROJECT_DIRECTORY)
