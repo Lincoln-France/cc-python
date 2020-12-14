@@ -1,8 +1,7 @@
 name: {{ cookiecutter.project_name.lower().replace(' ', '-') }}
 dependencies:
   - python==3.7
-  - notebook==6.1.5
-  - pip
+  - pip==19.2.3
   - pip:
     - -r requirements/dev.txt
     - -e .
