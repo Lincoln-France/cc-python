@@ -21,8 +21,9 @@ for line in sys.stdin:
 endef
 export PRINT_HELP_PYSCRIPT
 
-BROWSER := python -c "$$BROWSER_PYSCRIPT"
-PYTHON := [ ! -z "$$CONDA_PREFIX_1" ] && $$CONDA_PREFIX_1 || $$CONDA_PREFIX/envs/{{ cookiecutter.project_name.lower().replace(' ', '-') }}/bin/python
+
+CONDA_HOME := [ ! -z "$$CONDA_PREFIX_1" ] && $$CONDA_PREFIX_1 || $$CONDA_PREFIX
+PYTHON := /envs/{{ cookiecutter.project_name.lower().replace(' ', '-') }}/bin/python
 
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
@@ -103,4 +104,4 @@ start-ssh: ## start ssh daemon inside container and expose ssh port
 {%- endif %}
 
 start-notebook:
-	$(PYTHON) -m jupyter notebook --NotebookApp.token=lincoln
+	$(CONDA_HOME)$(PYTHON) -m jupyter notebook --NotebookApp.token=lincoln
