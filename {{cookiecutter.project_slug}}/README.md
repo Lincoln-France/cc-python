@@ -25,6 +25,13 @@
 ├── logs/               # dossier contenant les logs : dev specific
 ├── scripts/            # dossier contenant les scripts utilisant le package
 ├── docs/               # documentations générées par sphinx
+├── data/
+    ├── external/       # dossier contenant les données externes
+    ├── interim/        # dossier contenant des données dans un état intermédiaire/ayant subit des modifications
+    ├── processed/      # dossier contenant les données "propres" 
+    ├── raw/            # dossier contenant les données bruts
+├── models/             # dossier contenant les modèles
+├── notebooks/          # dossier content des notebooks (ie. exemple d'utilisation du package)
 ├── .github/            # template PR, Issues sur github, gitea, ...
 ├── .devcontainer/      # dossier contenant les configurations docker
 ```
@@ -44,7 +51,7 @@
 ├── LICENSE                         # license si besoin
 ├── Makefile                        # Makefile: aide à la compilation
 ├── .gitignore                      # Liste des éléments que git doit ignorer lors du commit
-├── requirements.txt                # Contient les dépendances (=packages) pyhton du projet
+├── environment.yml                 # Fichier de configuration de l'environnment conda
 ├── setup.cfg                       # aide au setup.py
 ├── setup.py                        # setup.py pour créer un package python
 ├── tox.ini                         # aide pour les tests
