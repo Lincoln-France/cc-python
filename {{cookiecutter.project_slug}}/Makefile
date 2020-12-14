@@ -102,4 +102,4 @@ start-ssh: ## start ssh daemon inside container and expose ssh port
 {%- endif %}
 
 start-notebook:
-    jupyter notebook --NotebookApp.token=lincoln
+    conda activate {{ cookiecutter.project_name.lower().replace(' ', '-') }} && jupyter notebook --NotebookApp.token=lincoln
