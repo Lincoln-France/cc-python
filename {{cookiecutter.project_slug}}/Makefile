@@ -22,6 +22,7 @@ endef
 export PRINT_HELP_PYSCRIPT
 
 BROWSER := python -c "$$BROWSER_PYSCRIPT"
+PYTHON := $$CONDA_PREFIX_1/envs/{{ cookiecutter.project_name.lower().replace(' ', '-') }}/bin/python
 
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
@@ -102,4 +103,4 @@ start-ssh: ## start ssh daemon inside container and expose ssh port
 {%- endif %}
 
 start-notebook:
-    conda activate {{ cookiecutter.project_name.lower().replace(' ', '-') }} && jupyter notebook --NotebookApp.token=lincoln
+    $(PYTHON) -m jupyter notebook --NotebookApp.token=lincoln
