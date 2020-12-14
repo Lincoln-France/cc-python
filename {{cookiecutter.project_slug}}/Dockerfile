@@ -28,9 +28,8 @@ RUN groupadd --gid $PGID $USERNAME \
     && useradd --uid $PUID --gid $PGID -m $USERNAME \
     && chown -R $PUID:$PGID $WORKDIR
 
-COPY requirements.txt .
 COPY requirements/* requirements/
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements/prod.txt
 {%- endif %}
 {%- endif %}
