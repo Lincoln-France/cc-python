@@ -1,6 +1,6 @@
 {%- if cookiecutter.docker == 'y' %}
 {%- if cookiecutter.docker_compose == 'y' %}
-ARG BASE_CONTAINER=continuumio/miniconda:4.7.12
+ARG BASE_CONTAINER=python:3.7-buster
 FROM $BASE_CONTAINER
 
 ARG PUID
@@ -19,17 +19,18 @@ RUN echo "TARGETVARIANT: $TARGETVARIANT"
 
 WORKDIR $WORKDIR
 
-COPY environment.yml .
-COPY requirements/* requirements/
+RUN pip install --upgrade pip
 
-RUN conda env create -f environment.yml
-
-ENV SHELL="conda run -n {{ cookiecutter.project_name.lower().replace(' ', '-') }} /bin/bash -c"
+ENV SHELL="/bin/bash"
 ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
 
 RUN groupadd --gid $PGID $USERNAME \
     && useradd --uid $PUID --gid $PGID -m $USERNAME \
     && chown -R $PUID:$PGID $WORKDIR
 
+COPY requirements.txt .
+COPY requirements/* requirements/
+
+RUN pip install -r requirements.txt
 {%- endif %}
 {%- endif %}
