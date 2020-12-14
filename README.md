@@ -60,6 +60,21 @@ Le - d'un package python (soyons lucide):
 * Coûteux en temps au début (apprentissage du cycle de developpement)
 * Documentation (oui, c'est aussi un point négatif)
 
+Pour installer le package en mode développement:
+
+```
+make install-dev
+```
+
+Le package sera alors disponible globalement dans l'environnement et prend en compte les modifications à la volée.
+
+pour installer le package véritablement:
+
+```
+make install
+```
+
+
 
 ## Architecture
 
