@@ -16,7 +16,7 @@ if __name__ == '__main__':
         sys.exit(1)
 
     # Look for conda
-    if os.system('conda -V'):
+    if os.system('conda -V > /dev/null'):
         print('ERROR: Conda is not installed or your PATH is not defined correctly.')
 
         # Exit to cancel project
