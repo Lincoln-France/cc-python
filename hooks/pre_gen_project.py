@@ -26,4 +26,3 @@ if __name__ == '__main__':
     env_clean = os.system("(conda env list | grep -c '^%s\\b' && echo 0) > /dev/null" % conda_env_name)
     if not env_clean:
         print('ERROR: There is already a conda envionment with name %s.' % conda_env_name)
-    
