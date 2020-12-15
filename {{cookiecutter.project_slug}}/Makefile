@@ -22,7 +22,7 @@ endef
 export PRINT_HELP_PYSCRIPT
 
 
-CONDA_HOME := [ ! -z "$$CONDA_PREFIX_1" ] && $$CONDA_PREFIX_1 || $$CONDA_PREFIX
+CONDA_HOME := if [ ! -z "$&CONDA_PREFIX_1" ]; then  $&CONDA_PREFIX_1; else $&CONDA_PREFIX; fi;
 PYTHON := /envs/{{ cookiecutter.project_name.lower().replace(' ', '-') }}/bin/python
 
 help:
