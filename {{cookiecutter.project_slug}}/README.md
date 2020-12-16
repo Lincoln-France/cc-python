@@ -25,14 +25,6 @@
 ├── logs/               # dossier contenant les logs : dev specific
 ├── scripts/            # dossier contenant les scripts utilisant le package
 ├── docs/               # documentations générées par sphinx
-├── data/
-    ├── external/       # dossier contenant les données externes
-    ├── interim/        # dossier contenant des données dans un état intermédiaire/ayant subit des modifications
-    ├── processed/      # dossier contenant les données "propres" 
-    ├── raw/            # dossier contenant les données bruts
-├── models/             # dossier contenant les modèles
-├── notebooks/          # dossier content des notebooks (ie. exemple d'utilisation du package)
-├── .github/            # template PR, Issues sur github, gitea, ...
 ├── .devcontainer/      # dossier contenant les configurations docker
 ```
 
