@@ -25,7 +25,6 @@
 ├── logs/               # dossier contenant les logs : dev specific
 ├── scripts/            # dossier contenant les scripts utilisant le package
 ├── docs/               # documentations générées par sphinx
-├── .github/            # template PR, Issues sur github, gitea, ...
 ├── .devcontainer/      # dossier contenant les configurations docker
 ```
 
