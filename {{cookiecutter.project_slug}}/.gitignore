@@ -107,3 +107,6 @@ ENV/
 # devcontainer settings
 .devcontainer
 docker-compose-dev.yaml
+
+# Data
+data/**/*
