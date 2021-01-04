@@ -11,7 +11,8 @@ def remove_file(filepath):
 
 
 def remove_folder(folderpath):
-    shutil.rmtree(os.path.join(PROJECT_DIRECTORY, folderpath), ignore_errors=True)
+    fullpath = os.path.join(PROJECT_DIRECTORY, folderpath)
+    shutil.rmtree(fullpath, ignore_errors=True)
 
 
 def fill_uid_gid_in_file(filepath: str, pattern='!!'):
