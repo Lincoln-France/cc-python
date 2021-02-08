@@ -58,3 +58,6 @@ if __name__ == '__main__':
     # Setting up conda environment
     print('Setting-up conda environment...')
     os.system("conda env create -f %s/environment.yml > /dev/null" % PROJECT_DIRECTORY)
+
+    print('Installing kernel for jupyter notebooks...')
+    os.system("conda run -n {{ cookiecutter.project_name.lower().replace(' ', '-') }} python -m ipykernel install --user --name={{ cookiecutter.project_name.lower().replace(' ', '-') }}")

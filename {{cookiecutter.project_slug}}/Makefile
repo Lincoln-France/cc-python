@@ -22,9 +22,6 @@ endef
 export PRINT_HELP_PYSCRIPT
 
 
-CONDA_HOME := if [ ! -z "$&CONDA_PREFIX_1" ]; then  $&CONDA_PREFIX_1; else $&CONDA_PREFIX; fi;
-PYTHON := /envs/{{ cookiecutter.project_name.lower().replace(' ', '-') }}/bin/python
-
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
@@ -106,4 +103,4 @@ start-ssh: ## start ssh daemon inside container and expose ssh port
 {%- endif %}
 
 start-notebook:
-	$(CONDA_HOME)$(PYTHON) -m jupyter notebook --NotebookApp.token=lincoln
+	$(CONDA_EXE) run -n {{ cookiecutter.project_name.lower().replace(' ', '-') }} python -m jupyter notebook --NotebookApp.token=lincoln
