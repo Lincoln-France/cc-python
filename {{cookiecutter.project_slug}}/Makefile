@@ -104,3 +104,7 @@ start-ssh: ## start ssh daemon inside container and expose ssh port
 
 start-notebook:
 	$(CONDA_EXE) run -n {{ cookiecutter.project_name.lower().replace(' ', '-') }} python -m jupyter notebook --NotebookApp.token=lincoln
+
+setup-conda-env:
+	$(CONDA_EXE) env create -f ./environment.yml > /dev/null
+	$(CONDA_EXE) run -n {{ cookiecutter.project_name.lower().replace(' ', '-') }} python -m ipykernel install --user --name={{ cookiecutter.project_name.lower().replace(' ', '-') }}
