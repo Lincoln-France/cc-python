@@ -1,0 +1,31 @@
+name: Testing cookiecutter
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        Python36:
+          python.version: '3.6'
+          TOXENV: 'py36'
+        Python37:
+          python.version: '3.7'
+          TOXENV: 'py37, docs, flake8'
+        Python38:
+          python.version: '3.8'
+          TOXENV: 'py38, docs, flake8'
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install Tox and any other packages
+        run: pip install tox
+      - name: Run Tox
+        # Run tox using the version of Python in `PATH`
+        run: tox
