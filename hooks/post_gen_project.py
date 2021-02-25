@@ -67,6 +67,8 @@ if __name__ == '__main__':
     if '{{ cookiecutter.devcontainer }}' == 'n':
         remove_folder('.devcontainer')
         remove_file('docker-compose-dev.yaml')
+    else:
+        fill_uid_gid_in_file(filepath='docker-compose-dev.yaml')
 
     if '{{ cookiecutter.github_actions }}' == 'n':
         remove_folder('.github')

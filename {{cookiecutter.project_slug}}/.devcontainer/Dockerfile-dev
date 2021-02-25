@@ -23,11 +23,10 @@ RUN pip install --upgrade pip
 ENV SHELL="/bin/bash"
 ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
 
-RUN if [ "$PUID" != "1000" ] || [ "$PGID" != "1000" ]; then \
-    groupadd --gid $PGID $USERNAME \
-        && useradd --uid $PUID --gid $PGID -m $USERNAME \
-        && chown -R $PUID:$PGID $WORKDIR; \
-    fi
+groupadd --gid $PGID $USERNAME \
+    && useradd --uid $PUID --gid $PGID -m $USERNAME \
+    && chown -R $PUID:$PGID $WORKDIR; \
+fi
 
 RUN chsh -s /bin/bash $USERNAME
 
