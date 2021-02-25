@@ -19,7 +19,7 @@ jobs:
           pip install -r requirements.txt
       - name: Build HTML documentation
         run: |
-          make html
+          make docs
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
