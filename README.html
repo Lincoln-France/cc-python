@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>README &#8212; Documentation lincoln-pypackage 0.1.0</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Lincoln Lab: Projet Python Squelette" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="readme">
+<h1>README<a class="headerlink" href="#readme" title="Lien permanent vers ce titre">¶</a></h1>
+<blockquote>
+<div><p>Template de base pour générer un projet python</p>
+</div></blockquote>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ce projet est crée grâce à <a class="reference external" href="https://cookiecutter.readthedocs.io/en/latest/">cookiecutter</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -U cookiecutter
+</pre></div>
+</div>
+<p>Générer un package python aux normes Lincoln:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cookiecutter http://factory.lincoln.cloud/git/Innovation/base-python-project
+</pre></div>
+</div>
+<p>Plusieurs questions pour parametrer le projet seront posées.</p>
+</div>
+<div class="section" id="parametres">
+<h2>Paramètres<a class="headerlink" href="#parametres" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lorsque vous générer un nouveau projet, plusieurs questions sont posées:</p>
+<ol class="simple">
+<li><p>Le nom de l”organisation concernant le projet (défaut: Lincoln Innovation)</p></li>
+<li><p>Le dev principal du projet (défaut: Innovation Squad)</p></li>
+<li><p>Le mail du dev principal (défaut: innovationsquad&#64;mel.lincoln.fr)</p></li>
+<li><p>Le username gitea associé au projet (défaut: Innovation)</p></li>
+<li><p>Nom du projet (défaut: Python Boilerplate)</p></li>
+<li><p>Slug du projet, ou le nom du dossier du projet (défaut: python-boilerplate)</p></li>
+<li><p>Nom du package (défaut: pythonboilerplate)</p></li>
+<li><p>Description du projet (défaut: Encore un nouveau projet du Lab Innovation qui va cartonner !)</p></li>
+<li><p>Version (défaut: 0.1.0)</p></li>
+<li><p>Framework pytest pour les tests unitaires (défaut: n)</p></li>
+<li><p>Framework CLI (défaut: Click)</p></li>
+<li><p>Usage de docker (défaut: y)</p></li>
+<li><p>Usage de docker-compose (défaut: y)</p></li>
+<li><p>Usage d”une conteneur de dev (défaut: y)</p></li>
+<li><p>SSH server dans le conteneur de dev (défaut: n)</p></li>
+<li><p>License (défaut: Not Open Source)</p></li>
+</ol>
+</div>
+<div class="section" id="un-projet-mais-aussi-un-package">
+<h2>Un projet, mais aussi un package !<a class="headerlink" href="#un-projet-mais-aussi-un-package" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il faut savoir que le projet que vous créer aura la chance d”être aussi un package python.</p>
+<p>Le + d”un package python (si si, ca peut être chouette):</p>
+<ul class="simple">
+<li><p>Portabilité</p></li>
+<li><p>Versionning</p></li>
+<li><p>Installation simple</p></li>
+<li><p>Dépendences contrôlées</p></li>
+<li><p>Documentation</p></li>
+<li><p>Testables</p></li>
+</ul>
+<p>Le - d”un package python (soyons lucide):</p>
+<ul class="simple">
+<li><p>Coûteux en temps au début (apprentissage du cycle de developpement)</p></li>
+<li><p>Documentation (oui, c”est aussi un point négatif)</p></li>
+</ul>
+<p>Pour installer le package en mode développement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">install</span><span class="o">-</span><span class="n">dev</span>
+</pre></div>
+</div>
+<p>Le package sera alors disponible globalement dans l”environnement et prend en compte les modifications à la volée.</p>
+<p>pour installer le package véritablement:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Lien permanent vers ce titre">¶</a></h2>
+</div>
+<div class="section" id="les-repertoires">
+<h2>Les répertoires<a class="headerlink" href="#les-repertoires" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.
+├── <span class="o">{{</span> cookiecutter.project_slug <span class="o">}}</span>       <span class="c1"># module principal</span>
+├── requirements/       <span class="c1"># dossier contenant les requirements python</span>
+├── tests/              <span class="c1"># dossier contenant les tests du package</span>
+├── logs/               <span class="c1"># dossier contenant les logs : dev specific</span>
+├── scripts/            <span class="c1"># dossier contenant les scripts utilisant le package</span>
+├── docs/               <span class="c1"># documentations générées par sphinx</span>
+├── .github/            <span class="c1"># template PR, Issues sur github, gitea, ...</span>
+├── .devcontainer/      <span class="c1"># dossier contenant les configurations docker</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="les-fichiers-importants">
+<h2>Les fichiers importants<a class="headerlink" href="#les-fichiers-importants" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.
+├── <span class="o">{{</span> cookiecutter.project_name <span class="o">}}</span>
+│   ├── __init__.py                 <span class="c1"># topc level package</span>
+├── .devcontainer/                  <span class="c1"># (optionnel)</span>
+│   ├── devcontainer.json           <span class="c1"># configuration du remote docker pour vscode</span>
+│   ├── Dockerfile-dev              <span class="c1"># Dockerfile de dev</span>
+├── README.md                       <span class="c1"># this file</span>
+├── HISTORY.md                      <span class="c1"># historique des version et les modifications</span>
+├── CONTRIBUTING.md                 <span class="c1"># comment contribuer au projet</span>
+├── LICENSE                         <span class="c1"># license si besoin</span>
+├── Makefile                        <span class="c1"># Makefile: aide à la compilation</span>
+├── .gitignore                      <span class="c1"># Liste des éléments que git doit ignorer lors du commit</span>
+├── requirements.txt                <span class="c1"># Contient les dépendances (=packages) pyhton du projet</span>
+├── setup.cfg                       <span class="c1"># aide au setup.py</span>
+├── setup.py                        <span class="c1"># setup.py pour créer un package python</span>
+├── tox.ini                         <span class="c1"># aide pour les tests</span>
+├── docker-compose.yaml             <span class="c1"># docker-compose du projet (optionnel)</span>
+├── docker-compose-dev.yaml         <span class="c1"># docker-compose de dev du projet (optionnel)</span>
+├── Dockerfile                      <span class="c1"># construction de l&#39;image (optionnel)</span>
+├── .env                            <span class="c1"># variable d&#39;environnement (optionnel)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="contribuer">
+<h2>Contribuer<a class="headerlink" href="#contribuer" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Faites un tour sur la documentation de cookiecutter, vous trouverez des astuces pour améliorer l”expérience.
+Il est aussi possible de faire évoluer ce projet en créant une issue et/ou une pull request :) !</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">lincoln-pypackage</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">README</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parametres">Paramètres</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#un-projet-mais-aussi-un-package">Un projet, mais aussi un package !</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-repertoires">Les répertoires</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-fichiers-importants">Les fichiers importants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contribuer">Contribuer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="conseils_dev.html">Conseils de développement</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="Chapitre précédent">Lincoln Lab: Projet Python Squelette</a></li>
+      <li>Next: <a href="tutorial.html" title="Chapitre suivant">Tutorial</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;Copyright (c) Audrey Roy Greenfeld and individual contributors. 2020, Lincoln Lab Innovation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/README.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
