@@ -1,0 +1,204 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Généralités &#8212; Documentation Lincoln: cc-python 0.1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Usage" href="usage.html" />
+    <link rel="prev" title="Lincoln: Template Projet Python" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="generalites">
+<h1>Généralités<a class="headerlink" href="#generalites" title="Lien permanent vers ce titre">¶</a></h1>
+<p><a class="reference external" href="https://cookiecutter.readthedocs.io/en/latest/">Cookiecutter</a> est un CLI (command line interface) permettant de générer un projet à partir d’un template.</p>
+<p>L’idée est parfaite pour initier un projet rapidement prêt à l’emploi ! Plus besoin de copier d’ancien projet et de bidouiller pour avoir un projet clean :) !</p>
+<p>Chez Lincoln nous avons adopté cette nouvelle pratique pour nos projets python. Nous nous sommes basés sur l’excellent template <a class="reference external" href="https://github.com/audreyfeldroy/cookiecutter-pypackage">cookiecutter-pypackage</a> de Audrey Roy Greenfeld.</p>
+<p>Nos pratiques nous ont amené à forker le template et ajouter nos propres modifications. Il existe d’ailleurs plusieurs templates python sur l’internet pour différentes tâches, n’hésitez pas à vous en inspirer.</p>
+<p>En tout cas, ce projet est notre template. Il évolue au fur et à mesure des nos besoins et expériences. Cette documentation est en cours de construction et a pour objectif de vous livrer un maximum d’information pour pouvoir utiliser ce template, voire même l’améliorer !</p>
+<p>Pour tout vous dire, nous développons déjà deux templates python et quelques-un sont en carton:</p>
+<ul class="simple">
+<li><a class="reference internal" href="cc-base.html"><span class="doc">cc-base</span></a>: template python de base, c’est une base commune aux autres</li>
+<li><a class="reference internal" href="cc-datascience.html"><span class="doc">cc-datascience</span></a>: template python pour nos projets datascience</li>
+<li><a class="reference internal" href="cc-lite.html"><span class="doc">cc-lite</span></a>: template python simplifié pour des projets rapides sans complexité <em>(en construction)</em></li>
+<li><a class="reference internal" href="cc-api.html"><span class="doc">cc-api</span></a>: template python pour des api simples <em>(en construction)</em></li>
+</ul>
+<p>Voici un avant-goût de son usage. Imaginons qu’un projet datascience commence:</p>
+<p>Il est nécessaire d’installer le CLI <em>cookiecutter</em>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; $ cookiecutter --version
+Cookiecutter 1.7.2
+</pre></div>
+</div>
+<p>La commande pour générer le projet. Une série de question pour générer le projet adequat.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; $ cookiecutter https://github.com/Lincoln-France/cc-python.git -c cc-datascience
+Do you want to re-use the existing version? [yes]: yes
+organisation [Lincoln Innovation]:
+lead_dev [Innovation Squad]:
+email [innovationsquad@mel.lincoln.fr]:
+gitea_username [Innovation]:
+project_name [Python Boilerplate]:
+project_slug [python-boilerplate]:
+package_name [pythonboilerplate]:
+project_short_description [Encore un nouveau projet du Lab Innovation qui va cartonner !]:
+version [0.1.0]:
+use_pytest [n]:
+Select command_line_interface:
+1 - Click
+2 - Argparse
+3 - No command-line interface
+Choose from 1, 2, 3 [1]: 2
+github_actions [y]:
+docker [y]:
+docker_compose [y]:
+devcontainer [y]:
+ssh_server_container [n]:
+Select open_source_license:
+1 - Not open source
+2 - MIT license
+3 - BSD license
+4 - ISC license
+5 - Apache Software License 2.0
+6 - GNU General Public License v3
+Choose from 1, 2, 3, 4, 5, 6 [1]: 2
+Setting-up conda environment...
+Installing kernel for jupyter notebooks...
+Installed kernelspec python-boilerplate in /home/lincoln/.local/share/jupyter/kernels/python-boilerplate
+</pre></div>
+</div>
+<p>Un environment conda est créé et le repertoire du projet:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; $ cd python-boilerplate
+&gt;&gt;&gt; $ ls -lrth
+-rw-r--r-- 1 lincoln lincoln 1,9K févr. 25 18:15 setup.py
+-rw-r--r-- 1 lincoln lincoln 2,6K févr. 25 18:15 Makefile
+-rw-r--r-- 1 lincoln lincoln  136 févr. 25 18:15 AUTHORS.md
+-rw-r--r-- 1 lincoln lincoln   50 févr. 25 18:15 HISTORY.md
+-rw-r--r-- 1 lincoln lincoln  472 févr. 25 18:15 setup.cfg
+-rw-r--r-- 1 lincoln lincoln 1,1K févr. 25 18:15 LICENSE
+-rw-r--r-- 1 lincoln lincoln 2,8K févr. 25 18:15 README.md
+-rw-r--r-- 1 lincoln lincoln  120 févr. 25 18:15 environment.yml
+-rw-r--r-- 1 lincoln lincoln  291 févr. 25 18:15 MANIFEST.in
+-rw-r--r-- 1 lincoln lincoln   26 févr. 25 18:15 CONTRIBUTING.md
+-rw-r--r-- 1 lincoln lincoln  298 févr. 25 18:15 tox.ini
+drwxr-xr-x 2 lincoln lincoln 4,0K févr. 25 18:15 models
+drwxr-xr-x 2 lincoln lincoln 4,0K févr. 25 18:15 scripts
+drwxr-xr-x 2 lincoln lincoln 4,0K févr. 25 18:15 requirements
+drwxr-xr-x 2 lincoln lincoln 4,0K févr. 25 18:15 notebooks
+drwxr-xr-x 6 lincoln lincoln 4,0K févr. 25 18:15 data
+drwxr-xr-x 2 lincoln lincoln 4,0K févr. 25 18:15 logs
+drwxr-xr-x 2 lincoln lincoln 4,0K févr. 25 18:15 docs
+drwxr-xr-x 2 lincoln lincoln 4,0K févr. 25 18:15 pythonboilerplate
+drwxr-xr-x 2 lincoln lincoln 4,0K févr. 25 18:15 tests
+-rw-r--r-- 1 lincoln lincoln  670 févr. 25 18:16 Dockerfile
+-rw-r--r-- 1 lincoln lincoln  385 févr. 25 18:16 docker-compose.yaml
+-rw-r--r-- 1 lincoln lincoln 2,0K févr. 25 18:16 docker-compose-dev.yaml
+drwxr-xr-x 2 lincoln lincoln 4,0K févr. 25 18:16 pythonboilerplate.egg-info
+</pre></div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Lincoln: cc-python</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Généralités</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cc-base.html">Lincoln: cookiecutter-base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cc-datascience.html">Lincoln: cookiecutter-datascience</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cc-lite.html">Lincoln: cookiecutter-lite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cc-api.html">Lincoln: cookiecutter-api</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutoriels.html">Tutoriels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acces_rapides.html">Accès rapides</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="Chapitre précédent">Lincoln: Template Projet Python</a></li>
+      <li>Next: <a href="usage.html" title="Chapitre suivant">Usage</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;Copyright (c) Audrey Roy Greenfeld and individual contributors. 2021, Lincoln Lab Innovation.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/general.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

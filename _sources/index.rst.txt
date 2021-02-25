@@ -1,16 +1,21 @@
-Lincoln Lab: Projet Python Squelette 
-====================================
+Lincoln: Template Projet Python 
+###############################
+
+.. toctree::
+   :maxdepth: 1
+
+   general
+   usage
+   cc-base
+   cc-datascience
+   cc-lite
+   cc-api
+
+Ressources
+**********
 
 .. toctree::
    :maxdepth: 2
 
-   README
-   tutorial
-
-Conseils
---------
-
-.. toctree::
-   :maxdepth: 2
-
-   conseils_dev
+   tutoriels
+   acces_rapides
