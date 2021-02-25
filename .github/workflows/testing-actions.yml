@@ -1,10 +1,17 @@
 name: Testing cookiecutter
 
-on: [push]
+on: 
+  push:
+    branches:
+      - cc-base
+      - cc-datascience
+  pull_request:
+    branches:
+      - cc-base
+      - cc-datascience
 
 jobs:
-  build:
-
+  testing:
     runs-on: ubuntu-latest
     strategy:
       matrix:
