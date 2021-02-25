@@ -10,6 +10,7 @@
   "version": "0.1.0",
   "use_pytest": "n",
   "command_line_interface": ["Click", "Argparse", "No command-line interface"],
+  "github_actions": "y",
   "docker": "y",
   "docker_compose": "{{ cookiecutter.docker }}",
   "devcontainer": "y",

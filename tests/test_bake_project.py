@@ -303,6 +303,25 @@ def test_bake_without_docker_compose(cookies):
         assert 'docker-compose.yaml' not in found_toplevel_files
 
 
+def test_bake_with_gh_actions(cookies):
+    context = {'github_actions': 'y'}
+    with bake_in_temp_dir(
+        cookies,
+        extra_context=context
+    ) as result:
+        assert "${{ matrix" in result.project.join('.github/workflows/testing-actions.yml').read()
+
+
+def test_bake_without_gh_actions(cookies):
+    context = {'github_actions': 'n'}
+    with bake_in_temp_dir(
+        cookies,
+        extra_context=context
+    ) as result:
+        found_toplevel_files = [f.basename for f in result.project.listdir()]
+        assert '.github' not in found_toplevel_files
+
+
 def test_make_install(cookies):
     with bake_in_temp_dir(cookies, extra_context={'command_line_interface': 'Argparse'}) as result:
         # The supplied Makefile does not support win32
