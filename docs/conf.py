@@ -52,8 +52,8 @@ source_suffix = {'.rst': 'restructuredtext', '.md': 'markdown'}
 master_doc = 'index'
 
 # General information about the project.
-project = 'lincoln-pypackage'
-copyright = 'Copyright (c) Audrey Roy Greenfeld and individual contributors. 2020, Lincoln Lab Innovation'
+project = 'Lincoln: cc-python'
+copyright = 'Copyright (c) Audrey Roy Greenfeld and individual contributors. 2021, Lincoln Lab Innovation'
 author = 'Audrey Roy Greenfeld and Lincoln Lab Innovation'
 
 # The version info for the project you're documenting, acts as replacement for

@@ -18,6 +18,5 @@ replay: watch
 	;
 
 docs:
-	cp README.md docs/
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html

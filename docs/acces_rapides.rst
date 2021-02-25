@@ -1,4 +1,4 @@
-Conseils de développement
+Accès rapides
 =========================
 
 1. Usage de docker
