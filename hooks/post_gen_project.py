@@ -31,6 +31,21 @@ def fill_uid_gid_in_file(filepath: str, pattern='!!'):
         sys.exit(1)
 
 
+def fill_variables_in_gh_actions(filepath: str):
+    try:
+        with open(filepath, 'r') as _file:
+            data = _file.read()
+
+        data = data.replace(r"\{", "{")
+        data = data.replace(r"\}", "}")
+
+        with open(filepath, 'w') as _file:
+            _file.write(data)
+    except Exception as err:
+        print(str(err))
+        sys.exit(1)
+
+
 if __name__ == '__main__':
 
     if 'no' in '{{ cookiecutter.command_line_interface|lower }}':
@@ -52,9 +67,16 @@ if __name__ == '__main__':
     if '{{ cookiecutter.devcontainer }}' == 'n':
         remove_folder('.devcontainer')
         remove_file('docker-compose-dev.yaml')
+    else:
+        fill_uid_gid_in_file(filepath='docker-compose-dev.yaml')
 
-    if '{{ cookiecutter.vscode_starter_settings }}' == 'n':
-        remove_folder('.vscode')
+    if '{{ cookiecutter.github_actions }}' == 'n':
+        remove_folder('.github')
+
+    if '{{ cookiecutter.github_actions }}' == 'y':
+        workflows_gh_actions_dir = os.path.join(".github", "workflows")
+        for _file in os.listdir(workflows_gh_actions_dir):
+            fill_variables_in_gh_actions(os.path.join(workflows_gh_actions_dir, _file))
 
     # Setting up conda environment
     print('Setting-up conda environment...')

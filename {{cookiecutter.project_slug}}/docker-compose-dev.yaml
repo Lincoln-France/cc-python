@@ -22,8 +22,8 @@ services:
       context: .
       dockerfile: .devcontainer/Dockerfile-dev
       args:
-        PUID: 1001
-        PGID: 1001
+        PUID: !!PUID!!
+        PGID: !!PGID!!
         WORKDIR: /package
         VERSION: devcontainer
     
