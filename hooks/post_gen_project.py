@@ -52,7 +52,6 @@ if __name__ == '__main__':
     if '{{ cookiecutter.devcontainer }}' == 'n':
         remove_folder('.devcontainer')
         remove_file('docker-compose-dev.yaml')
-<<<<<<< HEAD
 
     if '{{ cookiecutter.vscode_starter_settings }}' == 'n':
         remove_folder('.vscode')
@@ -63,5 +62,3 @@ if __name__ == '__main__':
 
     print('Installing kernel for jupyter notebooks...')
     os.system("conda run -n {{ cookiecutter.project_name.lower().replace(' ', '-') }} python -m ipykernel install --user --name={{ cookiecutter.project_name.lower().replace(' ', '-') }}")
-=======
->>>>>>> cc-base
