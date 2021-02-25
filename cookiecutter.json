@@ -1,7 +1,7 @@
 {
   "organisation": "Lincoln Innovation",
   "lead_dev": "Innovation Squad",
-  "email": "innovationsquad@mel.lincoln.fr",
+  "email": "labinnovation@mel.lincoln.fr",
   "gitea_username": "Innovation",
   "project_name": "Python Boilerplate",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
