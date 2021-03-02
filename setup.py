@@ -9,7 +9,7 @@ setup(
     author='François Vieille',
     license='BSD',
     author_email='francois.vieille@mel.lincoln.fr',
-    url='http://factory.lincoln.cloud/git/Innovation/base-python-project',
+    url='https://github.com/Lincoln-France/cc-python',
     keywords=['cookiecutter', 'template', 'package', 'Lincoln', 'Lincoln Lab Innovation'],
     python_requires='>=3.5',
     classifiers=[
