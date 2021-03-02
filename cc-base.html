@@ -1,65 +1,111 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Lincoln: cookiecutter-base &#8212; Documentation Lincoln: cc-python 0.1.0</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
+<!DOCTYPE html>
+<html class="writer-html4" lang="fr" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Lincoln: cookiecutter-base &mdash; Documentation Lincoln: cc-python 0.1.0</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Lincoln: cookiecutter-datascience" href="cc-datascience.html" />
-    <link rel="prev" title="Usage" href="usage.html" />
+    <link rel="prev" title="Usage" href="usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home"> Lincoln: cc-python
+          
+
+          
+          </a>
+
+          
             
-  <div class="section" id="lincoln-cookiecutter-base">
-<h1>Lincoln: cookiecutter-base<a class="headerlink" href="#lincoln-cookiecutter-base" title="Lien permanent vers ce titre">¶</a></h1>
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-
-          </div>
           
         </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Lincoln: cc-python</a></h1>
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="general.html">Généralités</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Lincoln: cookiecutter-base</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lincoln: cookiecutter-base</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contexte">Contexte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fonctionnement">Fonctionnement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#makefile">Makefile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sphinx">Sphinx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tox">Tox</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#package">Package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scripts">Scripts</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="cc-datascience.html">Lincoln: cookiecutter-datascience</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cc-lite.html">Lincoln: cookiecutter-lite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cc-api.html">Lincoln: cookiecutter-api</a></li>
@@ -69,53 +115,241 @@
 <li class="toctree-l1"><a class="reference internal" href="acces_rapides.html">Accès rapides</a></li>
 </ul>
 
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="usage.html" title="Chapitre précédent">Usage</a></li>
-      <li>Next: <a href="cc-datascience.html" title="Chapitre suivant">Lincoln: cookiecutter-datascience</a></li>
-  </ul></li>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Lincoln: cc-python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Lincoln: cookiecutter-base</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/cc-base.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lincoln-cookiecutter-base">
+<h1>Lincoln: cookiecutter-base<a class="headerlink" href="#lincoln-cookiecutter-base" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="contexte">
+<h2>Contexte<a class="headerlink" href="#contexte" title="Lien permanent vers ce titre">¶</a></h2>
+<p>cookiecutter-base ou <em>cc-base</em> est le template racine des autres template. Il se situe sur la branche <code class="docutils literal notranslate"><span class="pre">cc-base</span></code> du dépôt.
+L’usage de ce template est très général, il s’emploie dans l’ensemble des projets python.</p>
+<dl class="docutils">
+<dt><em>Remarques</em></dt>
+<dd><ul class="first last simple">
+<li>Le projet contiente encore plusieurs coquilles et nous les corrigeons à l’usage. Ouvrer une issue pour nous avertir d’erreur.</li>
+<li>La documentation est en cours de construction.</li>
+<li>Nous souhaitons développer les fonctionnalités dans des tutoriels.</li>
 </ul>
+</dd>
+</dl>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le template est très riche dans son arborescence pour couvrir un ensemble d’usage. Par défaut, la structure est la suivante:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.
+├── <span class="o">{{</span> cookiecutter.project_slug <span class="o">}}</span>/            <span class="c1"># répertoire du projet</span>
+│   ├── .devcontainer/                          <span class="c1"># répertoire du remote dev (optionnel)</span>
+│   │   ├── devcontainer.json                   <span class="c1"># fichier de configuration vscode pour le remote dev</span>
+│   │   ├── Dockerfile-dev                      <span class="c1"># dockerfile de dev</span>
+│   ├── .github/                                <span class="c1"># répertoire spécifique à github (optionnel)</span>
+│   │   ├── workflows/                          <span class="c1"># répertoire spécifique aux actions github</span>
+│   │   │   ├── documentation-actions.yml       <span class="c1"># action par défaut de documentation</span>
+│   │   │   ├── testing-actions.yml             <span class="c1"># action par défaut de tests</span>
+│   ├── docs/                                   <span class="c1"># répertoire de la documentation du package</span>
+│   │   ├── conf.py                             <span class="c1"># configuration de la documentation sphinx</span>
+│   │   ├── index.rst                           <span class="c1"># index de la documentation par défaut</span>
+│   │   ├── installation.rst                    <span class="c1"># documentation d&#39;installation du package par défaut</span>
+│   │   ├── make.bat                            <span class="c1"># makefile windows</span>
+│   │   ├── Makefile                            <span class="c1"># Makefile</span>
+│   │   ├── usage.rst                           <span class="c1"># documentation de l&#39;usage du package par défaut</span>
+│   ├── logs/                                   <span class="c1"># répertoire de la log</span>
+│   ├── <span class="o">{{</span> cookiecutter.package_name <span class="o">}}</span>/        <span class="c1"># répertoire du package python</span>
+│   │   ├── __init__.py                         <span class="c1"># fichier init python</span>
+│   │   ├── cli.py                              <span class="c1"># fichier interface de commande par défaut</span>
+│   │   ├── <span class="o">{{</span> cookiecutter.package_name <span class="o">}}</span>.py  <span class="c1"># module principal exemple</span>
+│   ├── requirements/                           <span class="c1"># répertoire pour définir les dépendances du package</span>
+│   │   ├── dev.txt                             <span class="c1"># dépendances de développement</span>
+│   │   ├── prod.txt                            <span class="c1"># dépendances de production</span>
+│   ├── scripts/                                <span class="c1"># répertoire des scripts utilisant le package</span>
+│   ├── test/                                   <span class="c1"># répertoire des tests unitaires</span>
+│   ├── .gitignore                              <span class="c1"># liste des éléments que git doit ignorer lors du commit</span>
+│   ├── AUTHORS.md                              <span class="c1"># référence les auteurs</span>
+│   ├── CONTRIBUTING.md                         <span class="c1"># comment contribuer au projet</span>
+│   ├── docker-compose-dev.yaml                 <span class="c1"># docker-compose de dev du projet (optionnel)</span>
+│   ├── docker-compose.yaml                     <span class="c1"># docker-compose du projet (optionnel)</span>
+│   ├── Dockerfile                              <span class="c1"># dockerfile de prod du projet (optionnel)</span>
+│   ├── HISTORY.md                              <span class="c1"># historique des versions et les modifications</span>
+│   ├── Makefile                                <span class="c1"># Makefile: aide à la compilation</span>
+│   ├── MANIFEST.in                             <span class="c1"># liste les fichiers à inclure dans le package</span>
+│   ├── README.md                               <span class="c1"># présentation technique du projet</span>
+│   ├── requirements.txt                        <span class="c1"># fichier de dépendances (=packages) python du projet</span>
+│   ├── setup.cfg                               <span class="c1"># configure des fonctionnalités python dans l&#39;environnement</span>
+│   ├── setup.py                                <span class="c1"># setup.py pour créer un package python</span>
+│   ├── tox.ini                                 <span class="c1"># aide pour les tests</span>
+│   ├── LICENSE                                 <span class="c1"># license si besoin</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fonctionnement">
+<h2>Fonctionnement<a class="headerlink" href="#fonctionnement" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ce template étant un fork du <a class="reference external" href="https://github.com/audreyfeldroy/cookiecutter-pypackage">cookiecutter-pypackage</a>, on retrouve l’ensemble des <a class="reference external" href="https://cookiecutter-pypackage.readthedocs.io/en/latest/readme.html#features">features</a> disponibles. Quelques évolutions ont été apportées.</p>
+<div class="section" id="makefile">
+<h3>Makefile<a class="headerlink" href="#makefile" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le <code class="docutils literal notranslate"><span class="pre">./Makefile</span></code> à la racine du projet est un fichier décrivant plusieurs tâches liées au projet. Chaque commande est un ensemble de ligne de commande pour effectuer une tâche.
+Voici quelques exemples:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make <span class="nb">help</span>        <span class="c1"># affiche les différentes tâches</span>
+$ make clean       <span class="c1"># nettoie le projet des fichiers temporaires</span>
+$ make docs        <span class="c1"># génère la documentation</span>
+$ make install-dev <span class="c1"># installe le package en mode développement</span>
+$ make test-all    <span class="c1"># test le package avec tox</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sphinx">
+<h3>Sphinx<a class="headerlink" href="#sphinx" title="Lien permanent vers ce titre">¶</a></h3>
+<p>L’usage de <a class="reference external" href="https://www.sphinx-doc.org/en/master/">sphinx</a> comme outil de documentation est intégré. La documentation se trouve dans le répertoire <code class="docutils literal notranslate"><span class="pre">./docs</span></code>.
+Pusieurs tâches <code class="docutils literal notranslate"><span class="pre">make</span></code> permettent de générer de la documentation:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make docs
+$ make servedocs
+</pre></div>
+</div>
+</div>
+<div class="section" id="tox">
+<h3>Tox<a class="headerlink" href="#tox" title="Lien permanent vers ce titre">¶</a></h3>
+<p>L’usage de l’utiliaire <a class="reference external" href="https://tox.readthedocs.io/en/latest/">tox</a> est conseillé pour les tests unitaires.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make test-all
+$ tox
+$ tox -e flake8 <span class="c1"># test linting</span>
+</pre></div>
+</div>
+<p>Il est possible de tester le package avec la commande <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code> sans passer par tox.</p>
+</div>
+<div class="section" id="package">
+<h3>Package<a class="headerlink" href="#package" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le projet crée par le template est un package qui peut être installé. Un package permet de pouvoir appeler les modules python dans n’importe quel script python: le package est dans le chemin de recherche des modules python.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make install
+</pre></div>
+</div>
+<p>Alors, si <em>package.package_name</em> est <em>pythonboilerplate</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pythonboilerplate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pythonboilerplate</span><span class="o">.</span><span class="n">__author__</span>
+<span class="go">Lincoln</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pythonboilerplate</span><span class="o">.</span><span class="n">__version__</span>
+<span class="go">0.1.0</span>
+</pre></div>
+</div>
+<p>En cas de développement, il est préférable d’installer le package en mode développement pour actualiser en temps réel les modules.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ make install-dev
+</pre></div>
+</div>
+</div>
+<div class="section" id="scripts">
+<h3>Scripts<a class="headerlink" href="#scripts" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Nous conseillons de développer des fonctions et classes (génériques) dans des modules du package et d’écrire des scripts executables dans <code class="docutils literal notranslate"><span class="pre">./scripts</span></code> qui importent ces fonctions/classes dans un cadre d’execution précis.</p>
+<p>La limite n’est jamais franche entre du code ré-utilisable et une application précise dans un cas d’usage, cela dit. Chaque cas est différent, mais l’idée est de faire évoluer ses pratiques vers des codes les plus génériques possibles dans le package.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="cc-datascience.html" class="btn btn-neutral float-right" title="Lincoln: cookiecutter-datascience" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="usage.html" class="btn btn-neutral float-left" title="Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) Audrey Roy Greenfeld and individual contributors. 2021, Lincoln Lab Innovation.
 
+    </p>
+  </div>
+    
+    
+    
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
-
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;Copyright (c) Audrey Roy Greenfeld and individual contributors. 2021, Lincoln Lab Innovation.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/cc-base.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>

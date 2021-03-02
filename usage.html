@@ -1,64 +1,113 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Usage &#8212; Documentation Lincoln: cc-python 0.1.0</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script type="text/javascript" src="_static/translations.js"></script>
+<!DOCTYPE html>
+<html class="writer-html4" lang="fr" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Usage &mdash; Documentation Lincoln: cc-python 0.1.0</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Lincoln: cookiecutter-base" href="cc-base.html" />
-    <link rel="prev" title="Généralités" href="general.html" />
+    <link rel="prev" title="Généralités" href="general.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home"> Lincoln: cc-python
+          
+
+          
+          </a>
+
+          
             
-  <div class="section" id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Lien permanent vers ce titre">¶</a></h1>
+            
+              <div class="version">
+                0.1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
 </div>
 
-
-          </div>
           
         </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Lincoln: cc-python</a></h1>
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="general.html">Généralités</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generer-un-projet">Générer un projet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parametres">Paramètres</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#use-pytest">use_pytest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-interface">command_line_interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#github-actions">github_actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker">docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker-compose">docker_compose</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#devcontainer">devcontainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssh-server-container">ssh_server_container</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#aller-plus-loin">Aller plus loin</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="cc-base.html">Lincoln: cookiecutter-base</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cc-datascience.html">Lincoln: cookiecutter-datascience</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cc-lite.html">Lincoln: cookiecutter-lite</a></li>
@@ -69,53 +118,316 @@
 <li class="toctree-l1"><a class="reference internal" href="acces_rapides.html">Accès rapides</a></li>
 </ul>
 
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="general.html" title="Chapitre précédent">Généralités</a></li>
-      <li>Next: <a href="cc-base.html" title="Chapitre suivant">Lincoln: cookiecutter-base</a></li>
-  </ul></li>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Lincoln: cc-python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Usage</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/usage.rst.txt" rel="nofollow"> Afficher la source de la page</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’usage d’un template cookiecutter nécessite l’installation de l’utilitaire <a class="reference external" href="https://cookiecutter.readthedocs.io/en/latest/installation.html">Cookiecutter</a>.</p>
+<p>Exemple pour linux (debian)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 -m pip install --user cookiecutter
+$ cookiecutter --version
+Cookiecutter <span class="m">1</span>.7.2
+</pre></div>
+</div>
+</div>
+<div class="section" id="generer-un-projet">
+<h2>Générer un projet<a class="headerlink" href="#generer-un-projet" title="Lien permanent vers ce titre">¶</a></h2>
+<p>L’utilitaire <em>cookiecutter</em> installé, pour générer un nouveau projet à partir du template <em>cc-python</em> de Lincoln:</p>
+<ol class="arabic simple">
+<li>se placer dans le repertoire parent du projet</li>
+<li>lancer la création avec la commande suivante:</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ cookiecutter https://github.com/Lincoln-France/cc-python -c cc-base
+</pre></div>
+</div>
+<p>Remarques</p>
+<blockquote>
+<div><ul class="simple">
+<li>L’argument <code class="docutils literal notranslate"><span class="pre">-c/--checkout</span></code> permet de passer d’une branche à l’autre. Par défaut la branche <code class="docutils literal notranslate"><span class="pre">cc-base</span></code> est utilisée.</li>
+<li>Pour générer un template <em>datascience</em> par exemple, il faut utiliser l’argument <code class="docutils literal notranslate"><span class="pre">-c</span> <span class="pre">cc-datascience</span></code>.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="parametres">
+<h2>Paramètres<a class="headerlink" href="#parametres" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lors de la génération d’un nouveau projet, une série de question est posée pour paramètrer le projet.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="30%" />
+<col width="32%" />
+<col width="6%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Paramètre</th>
+<th class="head">Description</th>
+<th class="head">Défaut</th>
+<th class="head">cc-base</th>
+<th class="head">cc-datascience</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>organisation</td>
+<td>Nom de l’organisation</td>
+<td>Lincoln</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>lead_dev</td>
+<td>Nom du dev principal</td>
+<td>Lincoln Innovation</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>Email du dev principal</td>
+<td><a class="reference external" href="mailto:labinnovation&#37;&#52;&#48;mel&#46;lincoln&#46;fr">labinnovation<span>&#64;</span>mel<span>&#46;</span>lincoln<span>&#46;</span>fr</a></td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>github_username</td>
+<td>Identifiant github du projet</td>
+<td>Lincoln_France</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>project_name</td>
+<td>Nom du projet</td>
+<td>Python Boilerplate</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>project_slug</td>
+<td>Nom du projet version informatique</td>
+<td>python-boilerplate</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>package_name</td>
+<td>Nom du package python</td>
+<td>pythonboilerplate</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>project_short_description</td>
+<td>Description courte du projet</td>
+<td>Projet <em>project_name</em> de <em>organisation</em></td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>version</td>
+<td>Version du projet</td>
+<td>0.1.0</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>use_pytest</td>
+<td>Pytest ou unittest (test framework)</td>
+<td>n</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>command_line_interface</td>
+<td>Framework de CLI</td>
+<td>Click (mais privilégier Argparse)</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>github_actions</td>
+<td>Usage des GH Actions</td>
+<td>y</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>docker</td>
+<td>Création d’un Dockerfile de prod</td>
+<td>n</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>docker_compose</td>
+<td>Création d’un docker-compose de prod</td>
+<td><em>docker</em></td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>devcontainer</td>
+<td>Création d’un conteneur de dev</td>
+<td>y</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-odd"><td>ssh_server_container</td>
+<td>Serveur SSH dans le conteneur de dev</td>
+<td>n</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr class="row-even"><td>open_source_license</td>
+<td>Choix de la license</td>
+<td>Not open source</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p>Voici quelques détails:</p>
+<div class="section" id="use-pytest">
+<h3>use_pytest<a class="headerlink" href="#use-pytest" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Permet de créer un répertoire <code class="docutils literal notranslate"><span class="pre">tests</span></code> à la racine avec un module de test avec le framework choisi. Par défaut, est <a class="reference external" href="https://docs.python.org/fr/3.8/library/unittest.html">unittest</a>, un framework de base de python.</p>
+</div>
+<div class="section" id="command-line-interface">
+<h3>command_line_interface<a class="headerlink" href="#command-line-interface" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Permet de créer un module <code class="docutils literal notranslate"><span class="pre">cli.py</span></code> d’interface en ligne de commande (CLI) dans le package. Par défaut le framework est <a class="reference external" href="https://click.palletsprojects.com/en/7.x/">Click</a>, mais nous privilégions Argparse, le framework natif de python.</p>
+</div>
+<div class="section" id="github-actions">
+<h3>github_actions<a class="headerlink" href="#github-actions" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Permet de créer une arborescence pour les pipelines Github <code class="docutils literal notranslate"><span class="pre">.github/workflows</span></code>. Le pipeline de tests et de documentation sont ajoutées.</p>
+</div>
+<div class="section" id="docker">
+<h3>docker<a class="headerlink" href="#docker" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Génère un fichier squelette <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> de production à la racine du projet.</p>
+</div>
+<div class="section" id="docker-compose">
+<h3>docker_compose<a class="headerlink" href="#docker-compose" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Génère un fichier squelette <code class="docutils literal notranslate"><span class="pre">docker-compose.yaml</span></code> de production à la racine du projet.</p>
+<dl class="docutils">
+<dt>Remarques</dt>
+<dd>les <code class="docutils literal notranslate"><span class="pre">!!PUID!!</span></code> et <code class="docutils literal notranslate"><span class="pre">!!PGID!!</span></code> sont remplacées à la volée à la génération.</dd>
+</dl>
+</div>
+<div class="section" id="devcontainer">
+<h3>devcontainer<a class="headerlink" href="#devcontainer" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Génère trois fichiers docker de dev afin de pouvoir développer dans un conteneur</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">.devcontainer/Dockerfile-dev</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">./docker-compose-dev.yaml</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">.devcontainer/devcontainer.json</span></code> fichier de configuration pour le <a class="reference external" href="https://code.visualstudio.com/docs/remote/containers">remote dev</a> de VScode</li>
 </ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    </div>
+<div class="section" id="ssh-server-container">
+<h3>ssh_server_container<a class="headerlink" href="#ssh-server-container" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Permet de créer un serveur SSH à l’intérieur d’un conteneur de dev. Cette fonctionnalité légèrement étrange peut être utile si on souhaite développer en remote dans un conteneur sur une VM.</p>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+</div>
+<div class="section" id="aller-plus-loin">
+<h2>Aller plus loin<a class="headerlink" href="#aller-plus-loin" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://cookiecutter.readthedocs.io/en/latest/installation.html">Cookiecutter</a> est pleins de ressources: <a class="reference external" href="https://cookiecutter.readthedocs.io/en/latest/advanced/index.html">advanced usage</a></p>
+</div>
+</div>
 
 
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="cc-base.html" class="btn btn-neutral float-right" title="Lincoln: cookiecutter-base" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="general.html" class="btn btn-neutral float-left" title="Généralités" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+    </div>
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright Copyright (c) Audrey Roy Greenfeld and individual contributors. 2021, Lincoln Lab Innovation.
 
+    </p>
+  </div>
+    
+    
+    
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;Copyright (c) Audrey Roy Greenfeld and individual contributors. 2021, Lincoln Lab Innovation.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/usage.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>
