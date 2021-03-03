@@ -136,7 +136,33 @@ Nous conseillons de développer des fonctions et classes (génériques) dans des
 La limite n'est jamais franche entre du code ré-utilisable et une application précise dans un cas d'usage, cela dit. Chaque cas est différent, mais l'idée est de faire évoluer ses pratiques vers des codes les plus génériques possibles dans le package.
 
 
+Docker en dev
+"""""""""""""
+L'usage d'un conteneur docker en développement est une bonne idée pour isoler entièrement l'environnement du projet. Cette fonctionnalité est possible en utilisant le paramètre ``devcontainer: y`` à la création du projet.
+
+Le dockerfile ``.devcontainer/Dockerfile-dev`` est créé et installe les dépendances spécifiées dans ``requirements/dev.txt``. Les bonnes pratiques docker impliquent de créer un user différent du ``root`` dans le conteneur. Par défaut le username est ``lincoln``. Le ``uid`` et ``gid`` sont calculés à la volée pour générer un user dans le conteneur capable de lire et écrire sur volumes montés. Par défaut le dossier du projet est montée dans le répertoire ``$WORKDIR=/package``
+
+Pour faciliter le build, le montage de volume et l'ajout d'image docker dépendantes au projet, un fichier docker-compose_ ``docker-compose-dev.yaml`` est créé. 
+
+Enfin, l'IDE vscode_ met à disposition une extension `remote - Containers <https://code.visualstudio.com/docs/remote/containers>`_ pour développer à l'intérieur d'un conteneur. Cette extension est paramétrable à l'aide du fichier ``.devcontainer/devcontainer.json``. Plusieurs configurations sont possibles, mais nous utilisons celle qui se base sur un docker-compose déjà existant: cela limite la dépendance à l'extension.
+
+
+**Remarques**
+    - Cette fonctionnalité n'a pas été testé pour Windows. Le système de uid/gid devrait être bloquant.
+    - L'image de base est ``python:3.7-buster``. A modifier en fonction des besoins.
+    - La command lancée avec le docker-compose permet de garder en vie le conteneur afin de développer.
+    - En ajoutant la ligne ``ENV PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages`` dans le dockerfile, les packages compilés de debian sont également dans le path python.
+
+
+Docker en prod
+""""""""""""""
+Le paramètre ``docker: y`` à la création du projet permet de créer un template ``Dockerfile`` similaire au dockerfile de dev.
+Idem pour la paramètre ``docker-compose: y``.
+
+
 .. _cookiecutter-pypackage: https://github.com/audreyfeldroy/cookiecutter-pypackage
 .. _features: https://cookiecutter-pypackage.readthedocs.io/en/latest/readme.html#features
 .. _sphinx: https://www.sphinx-doc.org/en/master/
 .. _tox: https://tox.readthedocs.io/en/latest/
+.. _docker-compose: https://docs.docker.com/compose/
+.. _vscode: https://code.visualstudio.com/
