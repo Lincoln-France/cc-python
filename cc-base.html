@@ -16,6 +16,8 @@
 
   
   
+    <link rel="shortcut icon" href="_static/favicon-32x32.png"/>
+  
 
   
   
@@ -58,6 +60,9 @@
             <a href="index.html" class="icon icon-home"> Lincoln: cc-python
           
 
+          
+            
+            <img src="_static/Lincoln_light_up_your_data_cropped.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -102,6 +107,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#tox">Tox</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#package">Package</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#scripts">Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker-en-dev">Docker en dev</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#docker-en-prod">Docker en prod</a></li>
 </ul>
 </li>
 </ul>
@@ -301,6 +308,28 @@ $ tox -e flake8 <span class="c1"># test linting</span>
 <p>Nous conseillons de développer des fonctions et classes (génériques) dans des modules du package et d’écrire des scripts executables dans <code class="docutils literal notranslate"><span class="pre">./scripts</span></code> qui importent ces fonctions/classes dans un cadre d’execution précis.</p>
 <p>La limite n’est jamais franche entre du code ré-utilisable et une application précise dans un cas d’usage, cela dit. Chaque cas est différent, mais l’idée est de faire évoluer ses pratiques vers des codes les plus génériques possibles dans le package.</p>
 </div>
+<div class="section" id="docker-en-dev">
+<h3>Docker en dev<a class="headerlink" href="#docker-en-dev" title="Lien permanent vers ce titre">¶</a></h3>
+<p>L’usage d’un conteneur docker en développement est une bonne idée pour isoler entièrement l’environnement du projet. Cette fonctionnalité est possible en utilisant le paramètre <code class="docutils literal notranslate"><span class="pre">devcontainer:</span> <span class="pre">y</span></code> à la création du projet.</p>
+<p>Le dockerfile <code class="docutils literal notranslate"><span class="pre">.devcontainer/Dockerfile-dev</span></code> est créé et installe les dépendances spécifiées dans <code class="docutils literal notranslate"><span class="pre">requirements/dev.txt</span></code>. Les bonnes pratiques docker impliquent de créer un user différent du <code class="docutils literal notranslate"><span class="pre">root</span></code> dans le conteneur. Par défaut le username est <code class="docutils literal notranslate"><span class="pre">lincoln</span></code>. Le <code class="docutils literal notranslate"><span class="pre">uid</span></code> et <code class="docutils literal notranslate"><span class="pre">gid</span></code> sont calculés à la volée pour générer un user dans le conteneur capable de lire et écrire sur volumes montés. Par défaut le dossier du projet est montée dans le répertoire <code class="docutils literal notranslate"><span class="pre">$WORKDIR=/package</span></code></p>
+<p>Pour faciliter le build, le montage de volume et l’ajout d’image docker dépendantes au projet, un fichier <a class="reference external" href="https://docs.docker.com/compose/">docker-compose</a> <code class="docutils literal notranslate"><span class="pre">docker-compose-dev.yaml</span></code> est créé.</p>
+<p>Enfin, l’IDE <a class="reference external" href="https://code.visualstudio.com/">vscode</a> met à disposition une extension <a class="reference external" href="https://code.visualstudio.com/docs/remote/containers">remote - Containers</a> pour développer à l’intérieur d’un conteneur. Cette extension est paramétrable à l’aide du fichier <code class="docutils literal notranslate"><span class="pre">.devcontainer/devcontainer.json</span></code>. Plusieurs configurations sont possibles, mais nous utilisons celle qui se base sur un docker-compose déjà existant: cela limite la dépendance à l’extension.</p>
+<dl class="docutils">
+<dt><strong>Remarques</strong></dt>
+<dd><ul class="first last simple">
+<li>Cette fonctionnalité n’a pas été testé pour Windows. Le système de uid/gid devrait être bloquant.</li>
+<li>L’image de base est <code class="docutils literal notranslate"><span class="pre">python:3.7-buster</span></code>. A modifier en fonction des besoins.</li>
+<li>La command lancée avec le docker-compose permet de garder en vie le conteneur afin de développer.</li>
+<li>En ajoutant la ligne <code class="docutils literal notranslate"><span class="pre">ENV</span> <span class="pre">PYTHONPATH=$PYTHONPATH:/usr/lib/python3/dist-packages</span></code> dans le dockerfile, les packages compilés de debian sont également dans le path python.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="docker-en-prod">
+<h3>Docker en prod<a class="headerlink" href="#docker-en-prod" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le paramètre <code class="docutils literal notranslate"><span class="pre">docker:</span> <span class="pre">y</span></code> à la création du projet permet de créer un template <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> similaire au dockerfile de dev.
+Idem pour la paramètre <code class="docutils literal notranslate"><span class="pre">docker-compose:</span> <span class="pre">y</span></code>.</p>
+</div>
 </div>
 </div>
 
@@ -318,7 +347,7 @@ $ tox -e flake8 <span class="c1"># test linting</span>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright Copyright (c) Audrey Roy Greenfeld and individual contributors. 2021, Lincoln Lab Innovation.
+        &#169; Copyright Audrey Roy Greenfeld and individual contributors. 2021, Lincoln.
 
     </p>
   </div>

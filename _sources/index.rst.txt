@@ -1,10 +1,10 @@
-Lincoln: Template Projet Python 
+Lincoln: cookiecutter-python 
 ###############################
 
 Présentation
 ************
 
-*cc-base* est une banque de template python pour générer des projets python sous forme de package.
+*cc-python* est une banque de template python pour générer des projets python sous forme de package.
 
 Les avantages:
 
@@ -13,6 +13,13 @@ Les avantages:
 - versionning simplifié
 - unification des projets dans l'entreprise
 - documentation facilitée
+
+
+Sources:
+
+* documentation: https://lincoln-france.github.io/cc-python
+* github: https://github.com/Lincoln-France/cc-python
+* lincoln: https://www.lincoln.fr/
 
 
 La base

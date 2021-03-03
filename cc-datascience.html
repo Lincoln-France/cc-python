@@ -16,6 +16,8 @@
 
   
   
+    <link rel="shortcut icon" href="_static/favicon-32x32.png"/>
+  
 
   
   
@@ -59,6 +61,9 @@
           
 
           
+            
+            <img src="_static/Lincoln_light_up_your_data_cropped.png" class="logo" alt="Logo"/>
+          
           </a>
 
           
@@ -94,7 +99,17 @@
 <li class="toctree-l1"><a class="reference internal" href="general.html">Généralités</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cc-base.html">Lincoln: cookiecutter-base</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Lincoln: cookiecutter-datascience</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lincoln: cookiecutter-datascience</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#contexte">Contexte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fonctionnement">Fonctionnement</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#conda">conda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data">data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notebooks">notebooks</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="cc-lite.html">Lincoln: cookiecutter-lite</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cc-api.html">Lincoln: cookiecutter-api</a></li>
 </ul>
@@ -170,6 +185,75 @@
             
   <div class="section" id="lincoln-cookiecutter-datascience">
 <h1>Lincoln: cookiecutter-datascience<a class="headerlink" href="#lincoln-cookiecutter-datascience" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="contexte">
+<h2>Contexte<a class="headerlink" href="#contexte" title="Lien permanent vers ce titre">¶</a></h2>
+<p>cookiecutter-datascience ou <em>cc-datascience</em> est le template destiné au projet orienté datascience. Il est basé sur <em>cc-base</em> avec quelques modifications:</p>
+<ul class="simple">
+<li>Ajout de répértoires <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> et <code class="docutils literal notranslate"><span class="pre">data</span></code></li>
+<li>Usage de conda</li>
+</ul>
+<dl class="docutils">
+<dt><em>Remarques</em></dt>
+<dd><ul class="first last simple">
+<li>Le projet contiente encore plusieurs coquilles et nous les corrigeons à l’usage. Ouvrer une issue pour nous avertir d’erreur.</li>
+<li>La documentation est en cours de construction.</li>
+<li>Nous souhaitons développer les fonctionnalités dans des tutoriels.</li>
+<li>Ce temple est aussi inspiré du célèbre template <a class="reference external" href="https://github.com/drivendata/cookiecutter-data-science">cookiecutter-datascience</a>.</li>
+<li>L’installation de l’utiliaire conda est requis.</li>
+</ul>
+</dd>
+</dl>
+<p>Nous présentons les fonctionnalités ajoutées par rapport à <em>cc-base</em>.</p>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Le template hérite de l’arborescence de <em>cc-base*</em>. Par défaut, la structure est la suivante:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.
+├── <span class="o">{{</span> cookiecutter.project_slug <span class="o">}}</span>/            <span class="c1"># répertoire du projet</span>
+<span class="p">|</span>   .                                           <span class="c1"># arborescence</span>
+<span class="p">|</span>   .                                           <span class="c1"># similaire</span>
+<span class="p">|</span>   .                                           <span class="c1"># à cc-base</span>
+│   ├── data/                                   <span class="c1"># répertoire de données</span>
+│   │   ├── external                            <span class="c1"># données externes</span>
+│   │   ├── interim                             <span class="c1"># données temporaires</span>
+│   │   ├── processed                           <span class="c1"># données finales</span>
+│   │   ├── raw                                 <span class="c1"># données bruts</span>
+│   ├── notebooks/                              <span class="c1"># répertoire des notebooks</span>
+│   ├── environnement.yml                       <span class="c1"># fichier d&#39;environnement conda</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="fonctionnement">
+<h2>Fonctionnement<a class="headerlink" href="#fonctionnement" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ce template hérite de <em>cc-base</em>, on retrouve l’ensemble des fonctionnalités. Voici celles qui ont été ajoutées.</p>
+<div class="section" id="conda">
+<h3>conda<a class="headerlink" href="#conda" title="Lien permanent vers ce titre">¶</a></h3>
+<p><a class="reference external" href="https://docs.conda.io/en/latest/">Conda</a> est un système de gestion d’environnement. Il est largement utilisé dans la communauté scientifique car il permet de gérer facilement les environnements et les dépendances de package.</p>
+<p>Par défaut, un environnement conda nommé <em>project_name</em> (e.g. python-boilerplate) à la création du projet. L’environnement est ajouté aux kernels de jupyer qui est installé à la création également.</p>
+</div>
+<div class="section" id="data">
+<h3>data<a class="headerlink" href="#data" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Des répertoires pour sauvegarder les données:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">data/exteral</span></code>: données externes.</li>
+<li><code class="docutils literal notranslate"><span class="pre">data/interim</span></code>: données temporaires, issus d’étapes intermédiaire.</li>
+<li><code class="docutils literal notranslate"><span class="pre">data/processed</span></code>: données finales.</li>
+<li><code class="docutils literal notranslate"><span class="pre">data/raw</span></code>: données bruts.</li>
+</ul>
+<dl class="docutils">
+<dt><em>Remarque</em></dt>
+<dd><ul class="first last simple">
+<li>ce n’est qu’un exemple, la structure est libre.</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="notebooks">
+<h3>notebooks<a class="headerlink" href="#notebooks" title="Lien permanent vers ce titre">¶</a></h3>
+<p>nous utilisons un répertoire pour sauvegarder les jupyer notebooks.
+Comme pour les scripts du répertoire <code class="docutils literal notranslate"><span class="pre">scripts</span></code>, ces notebooks ne doivent pas comporter de définition de fonction ou de classes. Ces dernières doivent être définies dans le package.</p>
+</div>
+</div>
 </div>
 
 
@@ -186,7 +270,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright Copyright (c) Audrey Roy Greenfeld and individual contributors. 2021, Lincoln Lab Innovation.
+        &#169; Copyright Audrey Roy Greenfeld and individual contributors. 2021, Lincoln.
 
     </p>
   </div>
