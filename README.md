@@ -22,7 +22,7 @@ cookiecutter https://github.com/Lincoln-France/cc-python -c cc-base
 
 Une documentation complète [ici](https://lincoln-france.github.io/cc-python)
 
-La documentation est généré automatique à partir de la branche **cc-base** de ce projet.
+La documentation est générée automatiquement à partir de la branche **cc-base** de ce projet.
 
 ## Contribuer
 
