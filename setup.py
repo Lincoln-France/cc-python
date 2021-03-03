@@ -6,7 +6,7 @@ setup(
     packages=[],
     version='0.1.0',
     description='Cookiecutter template for a Python package',
-    author='François Vieille',
+    author='Lincoln',
     license='BSD',
     author_email='francois.vieille@mel.lincoln.fr',
     url='https://github.com/Lincoln-France/cc-python',
