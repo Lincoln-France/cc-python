@@ -17,6 +17,12 @@ Générer un package python aux normes Lincoln:
 cookiecutter https://github.com/Lincoln-France/cc-python -c cc-base
 ```
 
+Générer un package python datascience aux normes Lincoln:
+
+```bash
+cookiecutter https://github.com/Lincoln-France/cc-python -c cc-datascience
+```
+
 
 ## Documentation
 
