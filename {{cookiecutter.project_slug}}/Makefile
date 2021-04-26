@@ -106,12 +106,9 @@ start-notebook:
 	$(CONDA_EXE) run -n {{ cookiecutter.project_name.lower().replace(' ', '-') }} python -m jupyter notebook --NotebookApp.token=lincoln
 
 setup-conda-env:
-
-	if conda env list | grep -q "^{{ cookiecutter.project_name.lower().replace(' ', '-') }}"
-	then
-		echo "/!\ Failed to create conda environnement. An environnement with name {{ cookiecutter.project_name.lower().replace(' ', '-') }} already exists."
-	else
-		$(CONDA_EXE) env create -f ./environment.yml > /dev/null
-		$(CONDA_EXE) run -n {{ cookiecutter.project_name.lower().replace(' ', '-') }} python -m ipykernel install --user --name={{ cookiecutter.project_name.lower().replace(' ', '-') }}
+	@if conda env list | grep -q "^{{ cookiecutter.project_name.lower().replace(' ', '-') }}"; then\
+		echo "/!\ Failed to create conda environnement. An environnement with name {{ cookiecutter.project_name.lower().replace(' ', '-') }} already exists.";\
+	else\
+		$(CONDA_EXE) env create -f ./environment.yml > /dev/null;\
+		$(CONDA_EXE) run -n {{ cookiecutter.project_name.lower().replace(' ', '-') }} python -m ipykernel install --user --name={{ cookiecutter.project_name.lower().replace(' ', '-') }};\
 	fi
-
