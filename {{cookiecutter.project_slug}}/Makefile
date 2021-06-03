@@ -103,7 +103,8 @@ start-ssh: ## start ssh daemon inside container and expose ssh port
 {%- endif %}
 
 start-notebook:
-	$(CONDA_EXE) run -n {{ cookiecutter.project_name.lower().replace(' ', '-') }} python -m jupyter notebook --NotebookApp.token=lincoln
+	echo "Starting jupyter notebook on port 8888 with token "lincoln".
+	$(CONDA_EXE) run -n {{ cookiecutter.project_name.lower().replace(' ', '-') }} python -m jupyter notebook --NotebookApp.token=lincoln --port=8888 --no-browser --ip=0.0.0.0
 
 setup-conda-env:
 	@if conda env list | grep -q "^{{ cookiecutter.project_name.lower().replace(' ', '-') }}"; then\
