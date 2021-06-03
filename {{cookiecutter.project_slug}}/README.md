@@ -25,7 +25,10 @@
 ├── logs/               # dossier contenant les logs : dev specific
 ├── scripts/            # dossier contenant les scripts utilisant le package
 ├── docs/               # documentations générées par sphinx
+{%- if cookiecutter.devcontainer == 'y' %}
 ├── .devcontainer/      # dossier contenant les configurations docker
+{%- endif %}
+
 ```
 
 ## Les fichiers importants
@@ -34,9 +37,11 @@
 .
 ├── {{ cookiecutter.project_name }}
 │   ├── __init__.py                 # topc level package
+{%- if cookiecutter.devcontainer == 'y' %}
 ├── .devcontainer/                  # (optionnel)
 │   ├── devcontainer.json           # configuration du remote docker pour vscode
 │   ├── Dockerfile-dev              # Dockerfile de dev
+{%- endif %}
 ├── README.md                       # this file
 ├── HISTORY.md                      # historique des version et les modifications
 ├── CONTRIBUTING.md                 # comment contribuer au projet
@@ -47,9 +52,13 @@
 ├── setup.cfg                       # aide au setup.py
 ├── setup.py                        # setup.py pour créer un package python
 ├── tox.ini                         # aide pour les tests
+{%- if cookiecutter.docker == 'y' %}
 ├── docker-compose.yaml             # docker-compose du projet (optionnel)
-├── docker-compose-dev.yaml         # docker-compose de dev du projet (optionnel)
 ├── Dockerfile                      # construction de l'image (optionnel)
+{%- endif %}
+{%- if cookiecutter.devcontainer == 'y' %}
+├── docker-compose-dev.yaml         # docker-compose de dev du projet (optionnel)
+{%- endif %}
 ├── .env                            # variable d'environnement (optionnel)
 ```
 
