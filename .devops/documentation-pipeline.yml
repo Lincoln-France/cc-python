@@ -18,7 +18,7 @@ steps:
     versionSpec: '3.6'
 
 - script: |
-    pip install --upgrade sphinx recommonmark
+    pip install --upgrade sphinx==1.8.5 recommonmark==0.6.0
   displayName: Install dependencies
 
 - task: CopyFiles@2
