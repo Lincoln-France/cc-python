@@ -21,8 +21,12 @@ def fill_uid_gid_in_file(filepath: str, pattern='!!'):
         with open(filepath, 'r') as _file:
             data = _file.read()
 
-        data = data.replace(pattern + 'PUID' + pattern, str(os.getuid()))
-        data = data.replace(pattern + 'PGID' + pattern, str(os.getgid()))
+        if os.name == 'nt':
+            data = data.replace(pattern + 'PUID' + pattern, str(1000))
+            data = data.replace(pattern + 'PGID' + pattern, str(1000))
+        else:
+            data = data.replace(pattern + 'PUID' + pattern, str(os.getuid()))
+            data = data.replace(pattern + 'PGID' + pattern, str(os.getgid()))
 
         with open(filepath, 'w') as _file:
             _file.write(data)
